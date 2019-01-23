@@ -1,0 +1,16 @@
+PODS:
+  - TactileSlider (0.1.0)
+
+DEPENDENCIES:
+  - TactileSlider (from `../`)
+
+EXTERNAL SOURCES:
+  TactileSlider:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TactileSlider: ac75fec455b49f5c0d0ee799e4f906776baf06fa
+
+PODFILE CHECKSUM: 2e2460c93ad3a974bdc28985d5e5541147bb0773
+
+COCOAPODS: 1.5.3

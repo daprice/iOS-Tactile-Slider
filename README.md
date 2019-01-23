@@ -22,7 +22,7 @@ pod 'TactileSlider'
 
 ## Author
 
-daprice, daprice@mac.com
+Dale Price, daprice@mac.com
 
 ## License
 
