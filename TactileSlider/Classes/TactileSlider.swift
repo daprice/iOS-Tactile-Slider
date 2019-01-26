@@ -14,6 +14,17 @@ import UIKit
 		case leftToRight
 		case topToBottom
 		case bottomToTop
+		
+		fileprivate var subtractive: Bool {
+			get {
+				switch self {
+				case .bottomToTop, .leftToRight:
+					return true
+				default:
+					return false
+				}
+			}
+		}
 	}
 
 	// MARK: - Public properties
@@ -26,18 +37,25 @@ import UIKit
 	
 	@IBInspectable open var minimumValue: Double = 0 {
 		didSet {
+			if maximumValue < minimumValue { maximumValue = minimumValue }
+			if value < minimumValue { value = minimumValue }
 			updateLayerFrames()
 		}
 	}
 	@IBInspectable open var maximumValue: Double = 1 {
 		didSet {
+			if minimumValue > maximumValue { minimumValue = maximumValue }
+			if value > maximumValue { value = maximumValue }
 			updateLayerFrames()
 		}
 	}
 	@IBInspectable open var value: Double = 0.5 {
-		// TODO: make sure it stays within minimum and maximum value
-		didSet {
-			updateLayerFrames()
+		didSet(oldValue) {
+			if oldValue != value {
+				if value < minimumValue { value = minimumValue }
+				if value > maximumValue { value = maximumValue }
+				updateLayerFrames()
+			}
 		}
 	}
 	
@@ -88,9 +106,28 @@ import UIKit
 	
 	@objc func didPan(panRecognizer: UIPanGestureRecognizer) {
 		let translation = panRecognizer.translation(in: self)
-		value += valueChangeForTranslation(translation)
+		let valueChange = valueChangeForTranslation(translation)
 		
-		panRecognizer.setTranslation(CGPoint.zero, in: self)
+		if value == minimumValue && valueChange < 0 {
+			// already hit minimum, don't change the value
+		} else if value == maximumValue && valueChange > 0 {
+			// already hit maximum, don't change the value
+		} else {
+			let newValue = value + valueChange
+			value = min(max(newValue, minimumValue), maximumValue)
+			
+			let remainingTranslationAmount: CGFloat
+			if value == newValue {
+				remainingTranslationAmount = 0
+			} else if direction.subtractive {
+				remainingTranslationAmount = positionForValue(value - newValue)
+			} else {
+				remainingTranslationAmount = positionForValue(newValue - value)
+			}
+			panRecognizer.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
+			
+			sendActions(for: .valueChanged)
+		}
 	}
 	
 	
