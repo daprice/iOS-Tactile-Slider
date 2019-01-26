@@ -71,6 +71,12 @@ import UIKit
 			updateLayerFrames()
 		}
 	}
+
+	override open var isEnabled: Bool {
+		didSet {
+			updateLayerFrames()
+		}
+	}
 	
 	override open var frame: CGRect {
 		didSet {

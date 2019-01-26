@@ -16,15 +16,17 @@ class TactileSliderTrackLayer: CALayer {
 			return
 		}
 		
+		let alpha: CGFloat = tactileSlider.isEnabled ? 1 : 0.5
+		
 		let path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
 		ctx.addPath(path.cgPath)
 		
 		// fill the background of the track
-		ctx.setFillColor(tactileSlider.trackTintColor.cgColor)
+		ctx.setFillColor(tactileSlider.trackTintColor.withAlphaComponent(alpha).cgColor)
 		ctx.fillPath()
 		
 		// fill the slider portion of the track
-		ctx.setFillColor(tactileSlider.trackHighlightTintColor.cgColor)
+		ctx.setFillColor(tactileSlider.trackHighlightTintColor.withAlphaComponent(alpha).cgColor)
 		
 		let zeroPosition = tactileSlider.positionForValue(tactileSlider.minimumValue)
 		let valuePosition = tactileSlider.positionForValue(tactileSlider.value)
