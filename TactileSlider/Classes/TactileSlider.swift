@@ -59,6 +59,8 @@ import UIKit
 		}
 	}
 	
+	@IBInspectable open var enableTapping: Bool = true
+	
 	@IBInspectable open var trackTintColor = UIColor(white: 0.2, alpha: 1) {
 		didSet {
 			updateLayerFrames()
@@ -93,7 +95,11 @@ import UIKit
 	private func setup() {
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
 		addGestureRecognizer(dragGestureRecognizer)
-		// TODO: tap gesture recognizer (optional)
+		
+		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+		tapGestureRecognizer.numberOfTapsRequired = 1
+		tapGestureRecognizer.numberOfTouchesRequired = 1
+		addGestureRecognizer(tapGestureRecognizer)
 		
 		trackLayer.tactileSlider = self
 		trackLayer.contentsScale = UIScreen.main.scale
@@ -104,8 +110,8 @@ import UIKit
 	
 	// MARK: - gesture handling
 	
-	@objc func didPan(panRecognizer: UIPanGestureRecognizer) {
-		let translation = panRecognizer.translation(in: self)
+	@objc func didPan(sender: UIPanGestureRecognizer) {
+		let translation = sender.translation(in: self)
 		let valueChange = valueChangeForTranslation(translation)
 		
 		if value == minimumValue && valueChange < 0 {
@@ -124,8 +130,25 @@ import UIKit
 			} else {
 				remainingTranslationAmount = positionForValue(newValue - value)
 			}
-			panRecognizer.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
+			sender.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
 			
+			sendActions(for: .valueChanged)
+		}
+	}
+	
+	@objc func didTap(sender: UITapGestureRecognizer) {
+		guard enableTapping else { return }
+		
+		if sender.state == .ended {
+			let tapLocation: CGFloat
+			if direction.subtractive {
+				tapLocation = valueAxisFrom(CGPoint(x: bounds.width, y: bounds.height), accountForDirection: false) + valueAxisFrom(sender.location(in: self))
+			}
+			else {
+				tapLocation = valueAxisFrom(sender.location(in: self), accountForDirection: false)
+			}
+			let tappedValue = valueForPosition(tapLocation)
+			value = tappedValue
 			sendActions(for: .valueChanged)
 		}
 	}
@@ -155,6 +178,16 @@ import UIKit
 			return bounds.width * CGFloat((value - minimumValue) / (maximumValue - minimumValue))
 		case .topToBottom, .bottomToTop:
 			return bounds.height * CGFloat((value - minimumValue) / (maximumValue - minimumValue))
+		}
+	}
+	
+	// returns the control value for a given position along the value axis
+	func valueForPosition(_ position: CGFloat) -> Double {
+		switch direction {
+		case .rightToLeft, .leftToRight:
+			return Double(position) / Double(bounds.width) * (maximumValue - minimumValue) + minimumValue
+		case .topToBottom, .bottomToTop:
+			return Double(position) / Double(bounds.height) * (maximumValue - minimumValue) + minimumValue
 		}
 	}
 	
