@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TactileSlider: ac75fec455b49f5c0d0ee799e4f906776baf06fa
+  TactileSlider: 52ef87d9e885aca8e4d18f5eaf5aed178c8d198e
 
 PODFILE CHECKSUM: 2e2460c93ad3a974bdc28985d5e5541147bb0773
 

@@ -1,7 +1,7 @@
 {
   "name": "TactileSlider",
   "version": "0.1.0",
-  "summary": "A short description of TactileSlider.",
+  "summary": "Easy-to-grab slider control inspired by Control Center and HomeKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/daprice/TactileSlider",
   "license": {
@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "daprice": "daprice@mac.com"
+    "Dale Price": "daprice@mac.com"
   },
   "source": {
     "git": "https://github.com/daprice/TactileSlider.git",
