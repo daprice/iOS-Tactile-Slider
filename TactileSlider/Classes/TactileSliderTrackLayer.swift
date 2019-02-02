@@ -22,13 +22,13 @@ class TactileSliderTrackLayer: CALayer {
 		ctx.addPath(path.cgPath)
 		
 		// fill the background of the track
-		ctx.setFillColor(tactileSlider.trackTintColor.withAlphaComponent(alpha).cgColor)
+		ctx.setFillColor(tactileSlider.trackTint.withAlphaComponent(alpha).cgColor)
 		ctx.fillPath()
 		
 		// fill the slider portion of the track
-		ctx.setFillColor(tactileSlider.trackHighlightTintColor.withAlphaComponent(alpha).cgColor)
+		ctx.setFillColor(tactileSlider.trackHighlight.withAlphaComponent(alpha).cgColor)
 		
-		let zeroPosition = tactileSlider.positionForValue(tactileSlider.minimumValue)
+		let zeroPosition = tactileSlider.positionForValue(tactileSlider.minimum)
 		let valuePosition = tactileSlider.positionForValue(tactileSlider.value)
 		let rectOrigin = tactileSlider.pointOnSlider(valueAxisPosition: zeroPosition, offAxisPosition: 0)
 		let rectDimensions = tactileSlider.pointOnSlider(valueAxisPosition: valuePosition, offAxisPosition: bounds.height)

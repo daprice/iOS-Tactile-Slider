@@ -9,7 +9,7 @@ import UIKit
 
 @IBDesignable open class TactileSlider: UIControl {
 	
-	public enum Direction {
+	private enum Direction {
 		case rightToLeft
 		case leftToRight
 		case topToBottom
@@ -29,44 +29,56 @@ import UIKit
 
 	// MARK: - Public properties
 	
-	open var direction: Direction = .rightToLeft {
+	@IBInspectable open var vertical: Bool = false {
 		didSet {
 			updateLayerFrames()
 		}
 	}
 	
-	@IBInspectable open var minimumValue: Double = 0 {
+	@IBInspectable open var reverseValueAxis: Bool = false {
 		didSet {
-			if maximumValue < minimumValue { maximumValue = minimumValue }
-			if value < minimumValue { value = minimumValue }
 			updateLayerFrames()
 		}
 	}
-	@IBInspectable open var maximumValue: Double = 1 {
-		didSet {
-			if minimumValue > maximumValue { minimumValue = maximumValue }
-			if value > maximumValue { value = maximumValue }
-			updateLayerFrames()
-		}
-	}
+	
 	@IBInspectable open var value: Double = 0.5 {
 		didSet(oldValue) {
 			if oldValue != value {
-				if value < minimumValue { value = minimumValue }
-				if value > maximumValue { value = maximumValue }
+				if value < minimum { value = minimum }
+				if value > maximum { value = maximum }
 				updateLayerFrames()
 			}
+		}
+	}
+	@IBInspectable open var minimum: Double = 0 {
+		didSet {
+			if maximum < minimum { maximum = minimum }
+			if value < minimum { value = minimum }
+			updateLayerFrames()
+		}
+	}
+	@IBInspectable open var maximum: Double = 1 {
+		didSet {
+			if minimum > maximum { minimum = maximum }
+			if value > maximum { value = maximum }
+			updateLayerFrames()
 		}
 	}
 	
 	@IBInspectable open var enableTapping: Bool = true
 	
-	@IBInspectable open var trackTintColor = UIColor(white: 0.2, alpha: 1) {
+	@IBInspectable open var trackTint: UIColor = UIColor(white: 0.2, alpha: 1) {
 		didSet {
 			updateLayerFrames()
 		}
 	}
-	@IBInspectable open var trackHighlightTintColor = UIColor(white: 1, alpha: 1) {
+	@IBInspectable open var trackHighlight: UIColor = UIColor(white: 1, alpha: 1) {
+		didSet {
+			updateLayerFrames()
+		}
+	}
+	
+	@IBInspectable var cornerRadius: CGFloat = 10 {
 		didSet {
 			updateLayerFrames()
 		}
@@ -85,6 +97,19 @@ import UIKit
 	}
 	
 	// MARK: - Private properties
+	
+	private var direction: Direction {
+		switch (vertical, reverseValueAxis) {
+		case (false, false):
+			return .leftToRight
+		case (false, true):
+			return .rightToLeft
+		case (true, false):
+			return .bottomToTop
+		case (true, true):
+			return .topToBottom
+		}
+	}
 	
 	private let trackLayer = TactileSliderTrackLayer()
 	
@@ -124,15 +149,15 @@ import UIKit
 	// MARK: - Accessibility
 	
 	override open func accessibilityDecrement() {
-		value -= (maximumValue - minimumValue) / 10
+		value -= (maximum - minimum) / 10
 	}
 	
 	override open func accessibilityIncrement() {
-		value += (maximumValue - minimumValue) / 10
+		value += (maximum - minimum) / 10
 	}
 	
 	public func valueAsPercentage(locale: Locale = Locale.current) -> String? {
-		let valueNumber = (value - minimumValue) / (maximumValue - minimumValue) as NSNumber
+		let valueNumber = (value - minimum) / (maximum - minimum) as NSNumber
 		let valueFormatter = NumberFormatter()
 		valueFormatter.numberStyle = .percent
 		valueFormatter.maximumFractionDigits = 0
@@ -152,13 +177,13 @@ import UIKit
 		let translation = sender.translation(in: self)
 		let valueChange = valueChangeForTranslation(translation)
 		
-		if value == minimumValue && valueChange < 0 {
+		if value == minimum && valueChange < 0 {
 			// already hit minimum, don't change the value
-		} else if value == maximumValue && valueChange > 0 {
+		} else if value == maximum && valueChange > 0 {
 			// already hit maximum, don't change the value
 		} else {
 			let newValue = value + valueChange
-			value = min(max(newValue, minimumValue), maximumValue)
+			value = min(max(newValue, minimum), maximum)
 			
 			let remainingTranslationAmount: CGFloat
 			if value == newValue {
@@ -203,6 +228,9 @@ import UIKit
 		CATransaction.begin()
 		CATransaction.setDisableActions(true)
 		
+		layer.cornerRadius = cornerRadius
+		layer.masksToBounds = cornerRadius > 0
+		
 		trackLayer.frame = bounds
 		trackLayer.setNeedsDisplay()
 		
@@ -215,9 +243,9 @@ import UIKit
 	func positionForValue(_ value: Double) -> CGFloat {
 		switch direction {
 		case .rightToLeft, .leftToRight:
-			return bounds.width * CGFloat((value - minimumValue) / (maximumValue - minimumValue))
+			return bounds.width * CGFloat((value - minimum) / (maximum - minimum))
 		case .topToBottom, .bottomToTop:
-			return bounds.height * CGFloat((value - minimumValue) / (maximumValue - minimumValue))
+			return bounds.height * CGFloat((value - minimum) / (maximum - minimum))
 		}
 	}
 	
@@ -225,9 +253,9 @@ import UIKit
 	func valueForPosition(_ position: CGFloat) -> Double {
 		switch direction {
 		case .rightToLeft, .leftToRight:
-			return Double(position) / Double(bounds.width) * (maximumValue - minimumValue) + minimumValue
+			return Double(position) / Double(bounds.width) * (maximum - minimum) + minimum
 		case .topToBottom, .bottomToTop:
-			return Double(position) / Double(bounds.height) * (maximumValue - minimumValue) + minimumValue
+			return Double(position) / Double(bounds.height) * (maximum - minimum) + minimum
 		}
 	}
 	
@@ -245,10 +273,10 @@ import UIKit
 	}
 	
 	func valueChangeForTranslation(_ translation: CGPoint) -> Double {
-		let translationSize = valueAxisFrom(translation, accountForDirection: false)
+		let translationSizeAlongValueAxis = valueAxisFrom(translation, accountForDirection: false)
 		let boundsSize = CGPoint(x: bounds.width, y: bounds.height)
 		let boundsSizeAlongValueAxis = valueAxisFrom(boundsSize)
-		return Double(translationSize / boundsSizeAlongValueAxis) * (maximumValue - minimumValue)
+		return Double(translationSizeAlongValueAxis / boundsSizeAlongValueAxis) * (maximum - minimum)
 	}
 	
 	func pointOnSlider(valueAxisPosition: CGFloat, offAxisPosition: CGFloat) -> CGPoint {
