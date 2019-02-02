@@ -14,17 +14,6 @@ import UIKit
 		case leftToRight
 		case topToBottom
 		case bottomToTop
-		
-		fileprivate var subtractive: Bool {
-			get {
-				switch self {
-				case .bottomToTop, .leftToRight:
-					return true
-				default:
-					return false
-				}
-			}
-		}
 	}
 
 	// MARK: - Public properties
@@ -188,7 +177,7 @@ import UIKit
 			let remainingTranslationAmount: CGFloat
 			if value == newValue {
 				remainingTranslationAmount = 0
-			} else if direction.subtractive {
+			} else if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
 				remainingTranslationAmount = positionForValue(value - newValue)
 			} else {
 				remainingTranslationAmount = positionForValue(newValue - value)
@@ -204,7 +193,7 @@ import UIKit
 		
 		if sender.state == .ended {
 			let tapLocation: CGFloat
-			if direction.subtractive {
+			if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
 				tapLocation = valueAxisFrom(CGPoint(x: bounds.width, y: bounds.height), accountForDirection: false) + valueAxisFrom(sender.location(in: self))
 			}
 			else {
@@ -259,11 +248,12 @@ import UIKit
 		}
 	}
 	
+	// returns whichever axis in a Point represents the value axis for this particular slider
 	func valueAxisFrom(_ point: CGPoint, accountForDirection: Bool = true) -> CGFloat {
 		switch direction {
-		case .rightToLeft:
-			return point.x
 		case .leftToRight:
+			return point.x
+		case .rightToLeft:
 			return accountForDirection ? -point.x : point.x
 		case .bottomToTop:
 			return accountForDirection ? -point.y : point.y
@@ -273,17 +263,17 @@ import UIKit
 	}
 	
 	func valueChangeForTranslation(_ translation: CGPoint) -> Double {
-		let translationSizeAlongValueAxis = valueAxisFrom(translation, accountForDirection: false)
+		let translationSizeAlongValueAxis = valueAxisFrom(translation)
 		let boundsSize = CGPoint(x: bounds.width, y: bounds.height)
-		let boundsSizeAlongValueAxis = valueAxisFrom(boundsSize)
+		let boundsSizeAlongValueAxis = valueAxisFrom(boundsSize, accountForDirection: false)
 		return Double(translationSizeAlongValueAxis / boundsSizeAlongValueAxis) * (maximum - minimum)
 	}
 	
 	func pointOnSlider(valueAxisPosition: CGFloat, offAxisPosition: CGFloat) -> CGPoint {
 		switch direction {
-		case .rightToLeft:
-			return CGPoint(x: valueAxisPosition, y: offAxisPosition)
 		case .leftToRight:
+			return CGPoint(x: valueAxisPosition, y: offAxisPosition)
+		case .rightToLeft:
 			return CGPoint(x: bounds.width - valueAxisPosition, y: offAxisPosition)
 		case .bottomToTop:
 			return CGPoint(x: offAxisPosition, y: bounds.height - valueAxisPosition)
