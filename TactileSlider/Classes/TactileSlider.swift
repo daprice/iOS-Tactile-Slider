@@ -30,15 +30,6 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable open var value: Double = 0.5 {
-		didSet(oldValue) {
-			if oldValue != value {
-				if value < minimum { value = minimum }
-				if value > maximum { value = maximum }
-				updateLayerFrames()
-			}
-		}
-	}
 	@IBInspectable open var minimum: Double = 0 {
 		didSet {
 			if maximum < minimum { maximum = minimum }
@@ -51,6 +42,15 @@ import UIKit
 			if minimum > maximum { minimum = maximum }
 			if value > maximum { value = maximum }
 			updateLayerFrames()
+		}
+	}
+	@IBInspectable open var value: Double = 0.5 {
+		didSet(oldValue) {
+			if oldValue != value {
+				if value < minimum { value = minimum }
+				if value > maximum { value = maximum }
+				updateLayerFrames()
+			}
 		}
 	}
 	

@@ -28,15 +28,6 @@
                                     <constraint firstAttribute="height" constant="50" id="65V-NR-045"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimum">
@@ -44,6 +35,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maximum">
                                         <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -55,17 +49,17 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="m8H-yC-WUi"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-ku-zjX" customClass="TactileSlider" customModule="TactileSlider">
@@ -76,15 +70,6 @@
                                     <constraint firstAttribute="width" constant="50" id="lfI-TE-EZW"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minimum">
@@ -92,6 +77,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maximum">
                                         <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -103,17 +91,17 @@
                                     <constraint firstAttribute="width" constant="50" id="opn-u5-eqk"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
