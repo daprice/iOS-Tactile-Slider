@@ -178,9 +178,9 @@ import UIKit
 			if value == newValue {
 				remainingTranslationAmount = 0
 			} else if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
-				remainingTranslationAmount = positionForValue(value - newValue)
+				remainingTranslationAmount = positionDifferenceForValueDifference(value - newValue)
 			} else {
-				remainingTranslationAmount = positionForValue(newValue - value)
+				remainingTranslationAmount = positionDifferenceForValueDifference(newValue - value)
 			}
 			sender.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
 			
@@ -235,6 +235,15 @@ import UIKit
 			return bounds.width * CGFloat((value - minimum) / (maximum - minimum))
 		case .topToBottom, .bottomToTop:
 			return bounds.height * CGFloat((value - minimum) / (maximum - minimum))
+		}
+	}
+	
+	func positionDifferenceForValueDifference(_ valueDifference: Double) -> CGFloat {
+		switch direction {
+		case .rightToLeft, .leftToRight:
+			return bounds.width * CGFloat((valueDifference) / (maximum - minimum))
+		case .topToBottom, .bottomToTop:
+			return bounds.height * CGFloat((valueDifference) / (maximum - minimum))
 		}
 	}
 	
