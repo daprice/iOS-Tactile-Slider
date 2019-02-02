@@ -88,6 +88,9 @@ import UIKit
 	
 	private let trackLayer = TactileSliderTrackLayer()
 	
+	
+	// MARK: - Initialization
+	
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
 		setup()
@@ -99,6 +102,9 @@ import UIKit
 	}
 	
 	private func setup() {
+		isAccessibilityElement = true
+		accessibilityTraits += UIAccessibilityTraitAdjustable
+		
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
 		addGestureRecognizer(dragGestureRecognizer)
 		
@@ -113,6 +119,32 @@ import UIKit
 		
 		updateLayerFrames()
 	}
+	
+	
+	// MARK: - Accessibility
+	
+	override open func accessibilityDecrement() {
+		value -= (maximumValue - minimumValue) / 10
+	}
+	
+	override open func accessibilityIncrement() {
+		value += (maximumValue - minimumValue) / 10
+	}
+	
+	public func valueAsPercentage(locale: Locale = Locale.current) -> String? {
+		let valueNumber = (value - minimumValue) / (maximumValue - minimumValue) as NSNumber
+		let valueFormatter = NumberFormatter()
+		valueFormatter.numberStyle = .percent
+		valueFormatter.maximumFractionDigits = 0
+		valueFormatter.locale = locale
+		
+		return valueFormatter.string(from: valueNumber)
+	}
+	
+	open func updateAccessibility() {
+		accessibilityValue = valueAsPercentage()
+	}
+	
 	
 	// MARK: - gesture handling
 	
@@ -175,6 +207,8 @@ import UIKit
 		trackLayer.setNeedsDisplay()
 		
 		CATransaction.commit()
+		
+		updateAccessibility()
 	}
 	
 	// returns the position along the value axis for a given control value
