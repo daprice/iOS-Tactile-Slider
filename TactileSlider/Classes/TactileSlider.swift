@@ -139,10 +139,12 @@ import UIKit
 	
 	override open func accessibilityDecrement() {
 		value -= (maximum - minimum) / 10
+		sendActions(for: .valueChanged)
 	}
 	
 	override open func accessibilityIncrement() {
 		value += (maximum - minimum) / 10
+		sendActions(for: .valueChanged)
 	}
 	
 	public func valueAsPercentage(locale: Locale = Locale.current) -> String? {
