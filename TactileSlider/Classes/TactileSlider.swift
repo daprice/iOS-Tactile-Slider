@@ -44,7 +44,7 @@ import UIKit
 			updateLayerFrames()
 		}
 	}
-	@IBInspectable open var value: Float = 0.5 {
+	@IBInspectable open private(set) var value: Float = 0.5 {
 		didSet(oldValue) {
 			if oldValue != value {
 				if value < minimum { value = minimum }
@@ -134,6 +134,14 @@ import UIKit
 		updateLayerFrames()
 	}
 	
+	open func setValue(_ newValue: Float, animated: Bool) {
+		if animated {
+			print("Warning: TactileSlider.setValue does not yet support animation")
+		}
+		
+		value = min(maximum, max(minimum, newValue))
+	}
+	
 	
 	// MARK: - Accessibility
 	
@@ -174,7 +182,7 @@ import UIKit
 			// already hit maximum, don't change the value
 		} else {
 			let newValue = value + valueChange
-			value = min(max(newValue, minimum), maximum)
+			setValue(newValue, animated: false)
 			
 			let remainingTranslationAmount: CGFloat
 			if value == newValue {
@@ -202,7 +210,7 @@ import UIKit
 				tapLocation = valueAxisFrom(sender.location(in: self), accountForDirection: false)
 			}
 			let tappedValue = valueForPosition(tapLocation)
-			value = tappedValue
+			setValue(tappedValue, animated: true)
 			sendActions(for: .valueChanged)
 		}
 	}
