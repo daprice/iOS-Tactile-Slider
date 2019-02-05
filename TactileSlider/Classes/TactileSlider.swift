@@ -30,21 +30,21 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable open var minimum: Double = 0 {
+	@IBInspectable open var minimum: Float = 0 {
 		didSet {
 			if maximum < minimum { maximum = minimum }
 			if value < minimum { value = minimum }
 			updateLayerFrames()
 		}
 	}
-	@IBInspectable open var maximum: Double = 1 {
+	@IBInspectable open var maximum: Float = 1 {
 		didSet {
 			if minimum > maximum { minimum = maximum }
 			if value > maximum { value = maximum }
 			updateLayerFrames()
 		}
 	}
-	@IBInspectable open var value: Double = 0.5 {
+	@IBInspectable open var value: Float = 0.5 {
 		didSet(oldValue) {
 			if oldValue != value {
 				if value < minimum { value = minimum }
@@ -231,7 +231,7 @@ import UIKit
 	}
 	
 	// returns the position along the value axis for a given control value
-	func positionForValue(_ value: Double) -> CGFloat {
+	func positionForValue(_ value: Float) -> CGFloat {
 		switch direction {
 		case .rightToLeft, .leftToRight:
 			return bounds.width * CGFloat((value - minimum) / (maximum - minimum))
@@ -240,7 +240,7 @@ import UIKit
 		}
 	}
 	
-	func positionDifferenceForValueDifference(_ valueDifference: Double) -> CGFloat {
+	func positionDifferenceForValueDifference(_ valueDifference: Float) -> CGFloat {
 		switch direction {
 		case .rightToLeft, .leftToRight:
 			return bounds.width * CGFloat((valueDifference) / (maximum - minimum))
@@ -250,12 +250,12 @@ import UIKit
 	}
 	
 	// returns the control value for a given position along the value axis
-	func valueForPosition(_ position: CGFloat) -> Double {
+	func valueForPosition(_ position: CGFloat) -> Float {
 		switch direction {
 		case .rightToLeft, .leftToRight:
-			return Double(position) / Double(bounds.width) * (maximum - minimum) + minimum
+			return Float(position) / Float(bounds.width) * (maximum - minimum) + minimum
 		case .topToBottom, .bottomToTop:
-			return Double(position) / Double(bounds.height) * (maximum - minimum) + minimum
+			return Float(position) / Float(bounds.height) * (maximum - minimum) + minimum
 		}
 	}
 	
@@ -273,11 +273,11 @@ import UIKit
 		}
 	}
 	
-	func valueChangeForTranslation(_ translation: CGPoint) -> Double {
+	func valueChangeForTranslation(_ translation: CGPoint) -> Float {
 		let translationSizeAlongValueAxis = valueAxisFrom(translation)
 		let boundsSize = CGPoint(x: bounds.width, y: bounds.height)
 		let boundsSizeAlongValueAxis = valueAxisFrom(boundsSize, accountForDirection: false)
-		return Double(translationSizeAlongValueAxis / boundsSizeAlongValueAxis) * (maximum - minimum)
+		return Float(translationSizeAlongValueAxis / boundsSizeAlongValueAxis) * (maximum - minimum)
 	}
 	
 	func pointOnSlider(valueAxisPosition: CGFloat, offAxisPosition: CGFloat) -> CGPoint {
