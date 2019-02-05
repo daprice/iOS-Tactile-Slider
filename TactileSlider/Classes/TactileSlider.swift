@@ -54,6 +54,7 @@ import UIKit
 		}
 	}
 	
+	@IBInspectable open var isContinuous: Bool = true
 	@IBInspectable open var enableTapping: Bool = true
 	
 	@IBInspectable open var trackTint: UIColor = UIColor(white: 0.2, alpha: 1) {
@@ -194,7 +195,9 @@ import UIKit
 			}
 			sender.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
 			
-			sendActions(for: .valueChanged)
+			if isContinuous || sender.state == .ended || sender.state == .cancelled {
+				sendActions(for: .valueChanged)
+			}
 		}
 	}
 	
