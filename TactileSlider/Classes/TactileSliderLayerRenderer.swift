@@ -80,11 +80,11 @@ internal class TactileSliderLayerRenderer {
 		CATransaction.commit()
 		
 		if let value = tactileSlider?.value {
-			showValue(value)
+			setValue(value)
 		}
 	}
 	
-	internal func showValue(_ value: Float) {
+	internal func setValue(_ value: Float, animated: Bool = false) {
 		CATransaction.begin()
 		CATransaction.setDisableActions(true)
 		
@@ -94,6 +94,13 @@ internal class TactileSliderLayerRenderer {
 		let position = tactileSlider!.pointOnSlider(valueAxisPosition: valueAxisAmount - (reverseOffset ? 0 : valueAxisOffset), offAxisPosition: 0)
 		
 		thumbLayer.transform = CATransform3DTranslate(CATransform3DIdentity, position.x, position.y, 0)
+		
+		if animated {
+			let animationAxis = tactileSlider!.vertical ? "y" : "x"
+			let animation = CABasicAnimation(keyPath: "transform.translation.\(animationAxis)")
+			animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+			thumbLayer.add(animation, forKey: nil)
+		}
 		
 		CATransaction.commit()
 	}

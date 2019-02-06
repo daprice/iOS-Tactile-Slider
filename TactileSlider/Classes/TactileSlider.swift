@@ -34,7 +34,7 @@ import UIKit
 		didSet {
 			if maximum < minimum { maximum = minimum }
 			if value < minimum { value = minimum }
-			renderer.showValue(value)
+			renderer.setValue(value)
 			updateAccessibility()
 		}
 	}
@@ -42,7 +42,7 @@ import UIKit
 		didSet {
 			if minimum > maximum { minimum = maximum }
 			if value > maximum { value = maximum }
-			renderer.showValue(value)
+			renderer.setValue(value)
 			updateAccessibility()
 		}
 	}
@@ -51,7 +51,6 @@ import UIKit
 			if oldValue != value {
 				if value < minimum { value = minimum }
 				if value > maximum { value = maximum }
-				renderer.showValue(value)
 				updateAccessibility()
 			}
 		}
@@ -138,11 +137,8 @@ import UIKit
 	}
 	
 	open func setValue(_ newValue: Float, animated: Bool) {
-		if animated {
-			print("Warning: TactileSlider.setValue does not yet support animation")
-		}
-		
 		value = min(maximum, max(minimum, newValue))
+		renderer.setValue(value, animated: animated)
 	}
 	
 	
