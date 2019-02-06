@@ -136,6 +136,7 @@ import UIKit
 		renderer.thumbTint = thumbTint
 		
 		layer.backgroundColor = UIColor.clear.cgColor
+		layer.isOpaque = false
 		layer.addSublayer(renderer.trackLayer)
 		renderer.trackLayer.addSublayer(renderer.thumbLayer)
 		
