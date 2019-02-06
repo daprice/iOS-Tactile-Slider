@@ -82,6 +82,12 @@ import UIKit
 		}
 	}
 	
+	override open var isEnabled: Bool {
+		didSet {
+			renderer.grayedOut = !isEnabled
+		}
+	}
+	
 	// MARK: - Private properties
 	
 	private var direction: Direction {

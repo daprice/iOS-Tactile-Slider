@@ -29,6 +29,12 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
+	var grayedOut: Bool = false {
+		didSet {
+			updateGrayedOut()
+		}
+	}
+	
 	let trackLayer = CALayer()
 	let thumbLayer = CAShapeLayer()
 	let maskLayer = CAShapeLayer()
@@ -60,6 +66,11 @@ internal class TactileSliderLayerRenderer {
 		maskLayer.path = maskPath.cgPath
 		
 		CATransaction.commit()
+	}
+	
+	private func updateGrayedOut() {
+		let alpha: Float = grayedOut ? 0.25 : 1
+		trackLayer.opacity = alpha
 	}
 	
 	internal func updateBounds(_ bounds: CGRect) {
