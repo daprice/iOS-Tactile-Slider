@@ -34,14 +34,16 @@ import UIKit
 		didSet {
 			if maximum < minimum { maximum = minimum }
 			if value < minimum { value = minimum }
-			updateLayerFrames()
+			renderer.showValue(value)
+			updateAccessibility()
 		}
 	}
 	@IBInspectable open var maximum: Float = 1 {
 		didSet {
 			if minimum > maximum { minimum = maximum }
 			if value > maximum { value = maximum }
-			updateLayerFrames()
+			renderer.showValue(value)
+			updateAccessibility()
 		}
 	}
 	@IBInspectable open private(set) var value: Float = 0.5 {
@@ -49,7 +51,8 @@ import UIKit
 			if oldValue != value {
 				if value < minimum { value = minimum }
 				if value > maximum { value = maximum }
-				updateLayerFrames()
+				renderer.showValue(value)
+				updateAccessibility()
 			}
 		}
 	}
@@ -57,26 +60,20 @@ import UIKit
 	@IBInspectable open var isContinuous: Bool = true
 	@IBInspectable open var enableTapping: Bool = true
 	
-	@IBInspectable open var trackTint: UIColor = UIColor(white: 0.2, alpha: 1) {
+	@IBInspectable open var trackBackground: UIColor = UIColor(white: 0.2, alpha: 1) {
 		didSet {
-			updateLayerFrames()
+			renderer.trackBackground = trackBackground
 		}
 	}
-	@IBInspectable open var trackHighlight: UIColor = UIColor(white: 1, alpha: 1) {
+	@IBInspectable open var thumbTint: UIColor = UIColor(white: 1, alpha: 1) {
 		didSet {
-			updateLayerFrames()
+			renderer.thumbTint = thumbTint
 		}
 	}
 	
 	@IBInspectable var cornerRadius: CGFloat = 10 {
 		didSet {
-			updateLayerFrames()
-		}
-	}
-
-	override open var isEnabled: Bool {
-		didSet {
-			updateLayerFrames()
+			renderer.cornerRadius = cornerRadius
 		}
 	}
 	
@@ -101,7 +98,7 @@ import UIKit
 		}
 	}
 	
-	private let trackLayer = TactileSliderTrackLayer()
+	private let renderer = TactileSliderLayerRenderer()
 	
 	
 	// MARK: - Initialization
@@ -128,9 +125,14 @@ import UIKit
 		tapGestureRecognizer.numberOfTouchesRequired = 1
 		addGestureRecognizer(tapGestureRecognizer)
 		
-		trackLayer.tactileSlider = self
-		trackLayer.contentsScale = UIScreen.main.scale
-		layer.addSublayer(trackLayer)
+		renderer.tactileSlider = self
+		renderer.cornerRadius = cornerRadius
+		renderer.trackBackground = trackBackground
+		renderer.thumbTint = thumbTint
+		
+		layer.backgroundColor = UIColor.clear.cgColor
+		layer.addSublayer(renderer.trackLayer)
+		renderer.trackLayer.addSublayer(renderer.thumbLayer)
 		
 		updateLayerFrames()
 	}
@@ -227,18 +229,7 @@ import UIKit
 	}
 	
 	private func updateLayerFrames() {
-		CATransaction.begin()
-		CATransaction.setDisableActions(true)
-		
-		layer.cornerRadius = cornerRadius
-		layer.masksToBounds = cornerRadius > 0
-		
-		trackLayer.frame = bounds
-		trackLayer.setNeedsDisplay()
-		
-		CATransaction.commit()
-		
-		updateAccessibility()
+		renderer.updateBounds(bounds)
 	}
 	
 	// returns the position along the value axis for a given control value
@@ -281,6 +272,19 @@ import UIKit
 			return accountForDirection ? -point.y : point.y
 		case .topToBottom:
 			return point.y
+		}
+	}
+	
+	func offAxisFrom(_ point: CGPoint, accountForDirection: Bool = true) -> CGFloat {
+		switch direction {
+		case .leftToRight:
+			return point.y
+		case .rightToLeft:
+			return accountForDirection ? -point.y : point.y
+		case .bottomToTop:
+			return accountForDirection ? -point.x : point.x
+		case .topToBottom:
+			return point.x
 		}
 	}
 	

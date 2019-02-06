@@ -15,7 +15,7 @@
 		76D84BFC101DFD3E278676D6CD49ABD3 /* TactileSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F755B81203BE459A565DC86B978329AC /* TactileSlider-dummy.m */; };
 		775FB9F7D6A12B23DA7B06ABCD65D7AD /* Pods-TactileSlider_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7E237DD13786164C748590CD606E82 /* Pods-TactileSlider_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D22590740845F9B82469126414721B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		841D05E0520D4B3B425F73F3C6C8A23E /* TactileSliderTrackLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderTrackLayer.swift */; };
+		841D05E0520D4B3B425F73F3C6C8A23E /* TactileSliderLayerRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderLayerRenderer.swift */; };
 		9F62C3B169D7F16E98632F2C7B6B0101 /* Pods-TactileSlider_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */; };
 		B841130550B404F0DDB33730669F0D84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -44,31 +44,31 @@
 		187CFB5C159F8FB87B4FDEFDC6F56482 /* Pods-TactileSlider_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		2660B9062E425A64399AD5740F07885F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29027E410B8B0A15ECA77F702D6A427C /* Pods-TactileSlider_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Example-frameworks.sh"; sourceTree = "<group>"; };
-		2A29BC6036889BF944B698D93BEB87D2 /* Pods_TactileSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TactileSlider_Example.framework; path = "Pods-TactileSlider_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F6CCCABE978FCEFE55E57B8744CEF0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		2A29BC6036889BF944B698D93BEB87D2 /* Pods_TactileSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileSlider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6CCCABE978FCEFE55E57B8744CEF0E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		39261411E54E41146081F391729CA9D5 /* Pods-TactileSlider_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Tests-dummy.m"; sourceTree = "<group>"; };
 		39865BB02612821242B4A47EC529D14C /* TactileSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSlider.swift; path = TactileSlider/Classes/TactileSlider.swift; sourceTree = "<group>"; };
 		3F76D4FF358D5F253582D8BAA194EE78 /* TactileSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-umbrella.h"; sourceTree = "<group>"; };
 		42E143BD556334A3CC19DAE7A8A9494F /* Pods-TactileSlider_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		43501D8E28CECC67013A08D75357A89D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		43501D8E28CECC67013A08D75357A89D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		4E0BB5309E15959CB8569C857F178DBA /* TactileSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TactileSlider.modulemap; sourceTree = "<group>"; };
-		53CB43190D5BA6FD31CC09FC9FE0F578 /* Pods_TactileSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TactileSlider_Tests.framework; path = "Pods-TactileSlider_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53CB43190D5BA6FD31CC09FC9FE0F578 /* Pods_TactileSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA66E50BB611674852DEC860E439787 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B41D578485AEEB686AF9E6A076851D2 /* Pods-TactileSlider_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Example.modulemap"; sourceTree = "<group>"; };
 		848E94EC873CA7C63D6D3DF9853BAD5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BCAFA9DFB54F615F92F897F6D7D6913 /* Pods-TactileSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8F2617B20044FA7CB22B904E892FF03A /* Pods-TactileSlider_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96AF7842CBAF7EA0E240D75EFC9F5171 /* TactileSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TactileSlider.framework; path = TactileSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96AF7842CBAF7EA0E240D75EFC9F5171 /* TactileSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TactileSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F17113B14287D8CC8506327147BA1C /* Pods-TactileSlider_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Example-resources.sh"; sourceTree = "<group>"; };
 		9F7E237DD13786164C748590CD606E82 /* Pods-TactileSlider_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A6988D0DC21349B7B94B9ED8D7A4971D /* TactileSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-prefix.pch"; sourceTree = "<group>"; };
 		AE21AEB64F11672CDD14F56AA062548C /* Pods-TactileSlider_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B4578940ED7C57C5FA77CD132A2EBAD0 /* Pods-TactileSlider_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Tests.modulemap"; sourceTree = "<group>"; };
 		BCFFDF40657C27D9AF633D5A85F5F27D /* Pods-TactileSlider_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Tests-resources.sh"; sourceTree = "<group>"; };
-		C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderTrackLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSliderTrackLayer.swift; path = TactileSlider/Classes/TactileSliderTrackLayer.swift; sourceTree = "<group>"; };
+		C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderLayerRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSliderLayerRenderer.swift; path = TactileSlider/Classes/TactileSliderLayerRenderer.swift; sourceTree = "<group>"; };
 		C3B0503E0532A7B6A67B54F0F0D7394F /* Pods-TactileSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D65735D1134C4E73600A16C7D61189FB /* TactileSlider.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = TactileSlider.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D65735D1134C4E73600A16C7D61189FB /* TactileSlider.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TactileSlider.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Example-dummy.m"; sourceTree = "<group>"; };
 		E3E795948B8888137A6FAE4E55759715 /* Pods-TactileSlider_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				39865BB02612821242B4A47EC529D14C /* TactileSlider.swift */,
-				C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderTrackLayer.swift */,
+				C0A6E522C4B7B5CD232551AB7C5CCC25 /* TactileSliderLayerRenderer.swift */,
 				C41F5498383747C8DFB9676075786A56 /* Pod */,
 				7EB0AB42DC0576A39892F7BBE197CEDD /* Support Files */,
 			);
@@ -383,7 +383,7 @@
 			files = (
 				76D84BFC101DFD3E278676D6CD49ABD3 /* TactileSlider-dummy.m in Sources */,
 				1ED6F95FCDCCC8CC6858BB487FB29A0D /* TactileSlider.swift in Sources */,
-				841D05E0520D4B3B425F73F3C6C8A23E /* TactileSliderTrackLayer.swift in Sources */,
+				841D05E0520D4B3B425F73F3C6C8A23E /* TactileSliderLayerRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,8 +600,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
