@@ -83,10 +83,16 @@ internal class TactileSliderLayerRenderer {
 	}
 	
 	internal func showValue(_ value: Float) {
+		CATransaction.begin()
+		CATransaction.setDisableActions(true)
+		
 		let valueAxisOffset = tactileSlider!.valueAxisFrom(CGPoint(x: thumbLayer.bounds.width, y: thumbLayer.bounds.height), accountForDirection: true)
 		let valueAxisAmount = tactileSlider!.positionForValue(value)
-		let position = tactileSlider!.pointOnSlider(valueAxisPosition: valueAxisAmount - (tactileSlider!.reverseValueAxis ? 0 : valueAxisOffset), offAxisPosition: 0)
+		let reverseOffset = (tactileSlider!.reverseValueAxis && !tactileSlider!.vertical) || (!tactileSlider!.reverseValueAxis && tactileSlider!.vertical)
+		let position = tactileSlider!.pointOnSlider(valueAxisPosition: valueAxisAmount - (reverseOffset ? 0 : valueAxisOffset), offAxisPosition: 0)
 		
 		thumbLayer.transform = CATransform3DTranslate(CATransform3DIdentity, position.x, position.y, 0)
+		
+		CATransaction.commit()
 	}
 }
