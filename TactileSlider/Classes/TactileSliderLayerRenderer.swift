@@ -109,7 +109,7 @@ internal class TactileSliderLayerRenderer {
 		if animated {
 			let animationAxis = tactileSlider!.vertical ? "y" : "x"
 			let animation = CABasicAnimation(keyPath: "transform.translation.\(animationAxis)")
-			animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
+			animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
 			thumbLayer.add(animation, forKey: nil)
 		}
 		

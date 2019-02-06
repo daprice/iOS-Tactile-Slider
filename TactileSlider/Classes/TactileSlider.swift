@@ -120,7 +120,7 @@ import UIKit
 	
 	private func setup() {
 		isAccessibilityElement = true
-		accessibilityTraits += UIAccessibilityTraitAdjustable
+		accessibilityTraits.insert(UIAccessibilityTraits.adjustable)
 		
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
 		addGestureRecognizer(dragGestureRecognizer)
@@ -153,11 +153,13 @@ import UIKit
 	
 	override open func accessibilityDecrement() {
 		value -= (maximum - minimum) / 10
+		renderer.setValue(value, animated: true)
 		sendActions(for: .valueChanged)
 	}
 	
 	override open func accessibilityIncrement() {
 		value += (maximum - minimum) / 10
+		renderer.setValue(value, animated: true)
 		sendActions(for: .valueChanged)
 	}
 	
