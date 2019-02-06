@@ -23,7 +23,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23G-Tb-ylv" customClass="TactileSlider" customModule="TactileSlider">
                                 <rect key="frame" x="40" y="28" width="295" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="65V-NR-045"/>
                                 </constraints>
@@ -37,13 +36,12 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-j3-34d" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="86" width="295" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="40" y="94" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m7t-26-N1I"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="m8H-yC-WUi"/>
@@ -58,13 +56,12 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-ku-zjX" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="144" width="50" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="40" y="160" width="50" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4TB-1l-iv7"/>
                                     <constraint firstAttribute="width" constant="50" id="lfI-TE-EZW"/>
@@ -79,13 +76,12 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-fM-pCA" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="98" y="144" width="50" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="106" y="160" width="50" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="58T-8W-JNq"/>
                                     <constraint firstAttribute="width" constant="50" id="opn-u5-eqk"/>
@@ -100,22 +96,22 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.5"/>
+                                        <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZDQ-j3-34d" firstAttribute="top" secondItem="23G-Tb-ylv" secondAttribute="bottom" constant="8" id="9x1-B7-qL8"/>
+                            <constraint firstItem="ZDQ-j3-34d" firstAttribute="top" secondItem="23G-Tb-ylv" secondAttribute="bottom" constant="16" id="9x1-B7-qL8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZDQ-j3-34d" secondAttribute="trailing" constant="24" id="aki-QV-i5v"/>
                             <constraint firstAttribute="trailingMargin" secondItem="23G-Tb-ylv" secondAttribute="trailing" constant="24" id="bEI-pj-qdL"/>
                             <constraint firstItem="23G-Tb-ylv" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="8" id="crd-bo-fDu"/>
-                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="8" id="fP7-7u-YrP"/>
-                            <constraint firstItem="BEf-fM-pCA" firstAttribute="leading" secondItem="NV5-ku-zjX" secondAttribute="trailing" constant="8" id="fbS-AV-w6f"/>
-                            <constraint firstItem="BEf-fM-pCA" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="8" id="kMj-ON-M6o"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="fP7-7u-YrP"/>
+                            <constraint firstItem="BEf-fM-pCA" firstAttribute="leading" secondItem="NV5-ku-zjX" secondAttribute="trailing" constant="16" id="fbS-AV-w6f"/>
+                            <constraint firstItem="BEf-fM-pCA" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="kMj-ON-M6o"/>
                             <constraint firstItem="ZDQ-j3-34d" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="okf-zu-ho2"/>
-                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="8" id="rJJ-6O-Sxg"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="rJJ-6O-Sxg"/>
                             <constraint firstItem="23G-Tb-ylv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="sOJ-HB-E3c"/>
                             <constraint firstItem="NV5-ku-zjX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="wxE-GU-YDh"/>
                             <constraint firstItem="NV5-ku-zjX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="ynt-4C-CJw"/>

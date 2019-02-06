@@ -37,7 +37,7 @@ internal class TactileSliderLayerRenderer {
 		trackLayer.backgroundColor = trackBackground.cgColor
 		thumbLayer.fillColor = thumbTint.cgColor
 		maskLayer.fillColor = UIColor.white.cgColor
-		maskLayer.backgroundColor = UIColor.black.cgColor
+		maskLayer.backgroundColor = UIColor.clear.cgColor
 		trackLayer.mask = maskLayer
 		trackLayer.masksToBounds = true
 	}
@@ -56,7 +56,8 @@ internal class TactileSliderLayerRenderer {
 		CATransaction.setDisableActions(true)
 		
 		let maskRect = CGRect(x: 0, y: 0, width: maskLayer.bounds.width, height: maskLayer.bounds.height)
-		maskLayer.path = CGPath(roundedRect: maskRect, cornerWidth: cornerRadius, cornerHeight: cornerRadius, transform: nil)
+		let maskPath = UIBezierPath(roundedRect: maskRect, cornerRadius: cornerRadius)
+		maskLayer.path = maskPath.cgPath
 		
 		CATransaction.commit()
 	}
@@ -68,8 +69,9 @@ internal class TactileSliderLayerRenderer {
 		trackLayer.bounds = bounds
 		trackLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
 		
-		maskLayer.bounds = bounds
+		maskLayer.bounds = trackLayer.bounds
 		maskLayer.position = trackLayer.position
+		updateMaskLayerPath()
 		
 		thumbLayer.bounds = trackLayer.bounds
 		thumbLayer.position = trackLayer.position

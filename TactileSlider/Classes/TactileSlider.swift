@@ -71,7 +71,7 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable var cornerRadius: CGFloat = 10 {
+	@IBInspectable var cornerRadius: CGFloat = 16 {
 		didSet {
 			renderer.cornerRadius = cornerRadius
 		}
