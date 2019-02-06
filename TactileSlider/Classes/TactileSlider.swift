@@ -60,12 +60,12 @@ import UIKit
 	@IBInspectable open var isContinuous: Bool = true
 	@IBInspectable open var enableTapping: Bool = true
 	
-	@IBInspectable open var trackBackground: UIColor = UIColor(white: 0.2, alpha: 1) {
+	@IBInspectable open var trackBackground: UIColor = UIColor.darkGray {
 		didSet {
 			renderer.trackBackground = trackBackground
 		}
 	}
-	@IBInspectable open var thumbTint: UIColor = UIColor(white: 1, alpha: 1) {
+	@IBInspectable open var thumbTint: UIColor = UIColor.white {
 		didSet {
 			renderer.thumbTint = thumbTint
 		}
