@@ -110,6 +110,29 @@ import UIKit
 	
 	private let renderer = TactileSliderLayerRenderer()
 	
+	// gross workaround for not being able to use @available on stored properties, from https://www.klundberg.com/blog/Swift-2-and-@available-properties/
+	private var _minMaxFeedbackGenerator: AnyObject?
+	@available(iOS 10.0, *) private var minMaxFeedbackGenerator: UIImpactFeedbackGenerator? {
+		get {
+			return _minMaxFeedbackGenerator as? UIImpactFeedbackGenerator
+		}
+		set(newValue) {
+			_minMaxFeedbackGenerator = newValue
+		}
+	}
+	
+	private var _feedbackStyle: Int?
+	@available(iOS 10.0, *) open var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle {
+		get {
+			guard let _feedbackStyle = _feedbackStyle,
+				let style = UIImpactFeedbackGenerator.FeedbackStyle(rawValue: _feedbackStyle) else { return .light }
+			return style
+		}
+		set(newValue) {
+			_feedbackStyle = newValue.rawValue
+		}
+	}
+	
 	
 	// MARK: - Initialization
 	
@@ -146,6 +169,10 @@ import UIKit
 		renderer.trackLayer.addSublayer(renderer.thumbLayer)
 		
 		updateLayerFrames()
+		
+		if #available(iOS 10.0, *) {
+			feedbackStyle = .light
+		}
 	}
 	
 	open func setValue(_ newValue: Float, animated: Bool) {
@@ -194,8 +221,27 @@ import UIKit
 		} else if value == maximum && valueChange > 0 {
 			// already hit maximum, don't change the value
 		} else {
+			
 			let newValue = value + valueChange
 			setValue(newValue, animated: false)
+			
+			// control feedback generator according to state
+			if #available(iOS 10.0, *) {
+				switch sender.state {
+				case .began:
+					minMaxFeedbackGenerator = UIImpactFeedbackGenerator(style: feedbackStyle)
+					minMaxFeedbackGenerator?.prepare()
+				case .changed:
+					if newValue != value {
+						minMaxFeedbackGenerator?.impactOccurred()
+						minMaxFeedbackGenerator?.prepare()
+					}
+				case .cancelled, .ended, .failed:
+					_minMaxFeedbackGenerator = nil
+				default:
+					break
+				}
+			}
 			
 			let remainingTranslationAmount: CGFloat
 			if value == newValue {
@@ -211,7 +257,7 @@ import UIKit
 				sendActions(for: .valueChanged)
 			}
 			
-			if sender.state != .ended && sender.state != .cancelled {
+			if sender.state != .ended && sender.state != .cancelled && sender.state != .failed {
 				renderer.popUp = scaleUpWhenInUse
 			} else {
 				renderer.popUp = false
