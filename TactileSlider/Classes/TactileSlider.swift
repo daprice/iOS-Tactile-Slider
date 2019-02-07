@@ -57,7 +57,12 @@ import UIKit
 	}
 	
 	@IBInspectable open var isContinuous: Bool = true
+	
+	// If true, a single tap anywhere in the slider will set it to that value
 	@IBInspectable open var enableTapping: Bool = true
+	
+	// If true, the slider will animate its scale when it is being dragged
+	@IBInspectable open var scaleUpWhenInUse: Bool = false
 	
 	@IBInspectable open var trackBackground: UIColor = UIColor.darkGray {
 		didSet {
@@ -204,6 +209,12 @@ import UIKit
 			
 			if isContinuous || sender.state == .ended || sender.state == .cancelled {
 				sendActions(for: .valueChanged)
+			}
+			
+			if sender.state != .ended && sender.state != .cancelled {
+				renderer.popUp = scaleUpWhenInUse
+			} else {
+				renderer.popUp = false
 			}
 		}
 	}

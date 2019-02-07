@@ -35,6 +35,14 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
+	var popUp: Bool = false {
+		didSet(oldValue) {
+			if oldValue != popUp {
+				updatePopUp()
+			}
+		}
+	}
+	
 	let trackLayer = CALayer()
 	let thumbLayer = CAShapeLayer()
 	let maskLayer = CAShapeLayer()
@@ -71,6 +79,21 @@ internal class TactileSliderLayerRenderer {
 	private func updateGrayedOut() {
 		let alpha: Float = grayedOut ? 0.25 : 1
 		trackLayer.opacity = alpha
+	}
+	
+	private func updatePopUp() {
+		CATransaction.begin()
+		CATransaction.setDisableActions(true)
+		
+		let zPosition: CGFloat = popUp ? 1.025 : 1
+		trackLayer.transform = CATransform3DScale(CATransform3DIdentity, zPosition, zPosition, zPosition)
+		
+		let animation = CABasicAnimation(keyPath: "transform.scale")
+		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+		animation.duration = 0.1
+		trackLayer.add(animation, forKey: nil)
+		
+		CATransaction.commit()
 	}
 	
 	internal func updateBounds(_ bounds: CGRect) {
