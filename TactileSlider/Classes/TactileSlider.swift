@@ -285,6 +285,11 @@ import UIKit
 	
 	// MARK: - Graphics
 	
+	override open func layoutSubviews() {
+		super.layoutSubviews()
+		self.setNeedsDisplay()
+	}
+	
 	override open func draw(_ rect: CGRect) {
 		super.draw(rect)
 		updateLayerFrames()
