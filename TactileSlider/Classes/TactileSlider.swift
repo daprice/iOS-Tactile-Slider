@@ -1,6 +1,6 @@
 //
 //  TactileSlider.swift
-//  Pods
+//  Easy-to-grab slider control inspired by Control Center and HomeKit.
 //
 //  Created by Dale Price on 1/22/19.
 //
@@ -18,18 +18,29 @@ import UIKit
 
 	// MARK: - Public properties
 	
+	/// If true, the slider will move in the vertical direction; if false, horizontal.
+	///
+	/// - Note: You are responsible for setting dimensions/layout constraints on the control in a way that makes sense for the orientation you set.
+	///
+	/// - SeeAlso: `reverseValueAxis`
 	@IBInspectable open var vertical: Bool = false {
 		didSet {
 			updateLayerFrames()
 		}
 	}
 	
+	/// If false (default), the minimum value will be at the bottom or left of the slider, depending on `vertical`; if true, the minimum will be at the top or right.
+	///
+	/// - SeeAlso: `vertical`
 	@IBInspectable open var reverseValueAxis: Bool = false {
 		didSet {
 			updateLayerFrames()
 		}
 	}
 	
+	/// The minimum value for the slider
+	///
+	/// - Note: If you set this to above `maximum` or `value`, those values will be changed to match
 	@IBInspectable open var minimum: Float = 0 {
 		didSet {
 			if maximum < minimum { maximum = minimum }
@@ -38,6 +49,10 @@ import UIKit
 			updateAccessibility()
 		}
 	}
+	
+	/// The maximum value for the slider
+	///
+	/// - Note: If you set this to below `minimum` or `value`, those values will be changed to match
 	@IBInspectable open var maximum: Float = 1 {
 		didSet {
 			if minimum > maximum { minimum = maximum }
@@ -46,6 +61,8 @@ import UIKit
 			updateAccessibility()
 		}
 	}
+	
+	/// The current (or starting) value for the slider
 	@IBInspectable open private(set) var value: Float = 0.5 {
 		didSet(oldValue) {
 			if oldValue != value {
@@ -56,25 +73,32 @@ import UIKit
 		}
 	}
 	
+	/// If true, will send `valueChanged` actions at every point during a movement of the slider; if false, will only send when the user lifts their finger
 	@IBInspectable open var isContinuous: Bool = true
 	
-	// If true, a single tap anywhere in the slider will set it to that value
+	/// If true, a single tap anywhere in the slider will set it to that value
+	///
+	/// - Remark: Users may accidentally activate this feature while trying to make very small adjustments. If the context lends to making very small adjustments with the slider, consider disabling this feature.
 	@IBInspectable open var enableTapping: Bool = true
 	
-	// If true, the slider will animate its scale when it is being dragged
+	/// If true, the slider will animate its scale when it is being dragged
 	@IBInspectable open var scaleUpWhenInUse: Bool = false
 	
+	/// The color of the track the slider slides along
 	@IBInspectable open var trackBackground: UIColor = UIColor.darkGray {
 		didSet {
 			renderer.trackBackground = trackBackground
 		}
 	}
+	
+	/// The color of the value indicator part of the slider
 	@IBInspectable open var thumbTint: UIColor = UIColor.white {
 		didSet {
 			renderer.thumbTint = thumbTint
 		}
 	}
 	
+	/// The radius of the rounded corners of the slider
 	@IBInspectable var cornerRadius: CGFloat = 16 {
 		didSet {
 			renderer.cornerRadius = cornerRadius
@@ -122,6 +146,12 @@ import UIKit
 	}
 	
 	private var _feedbackStyle: Int?
+	
+	/// The `UIImpactFeedbackGenerator.FeedbackStyle` used for haptic feedback when the slider reaches either end of its track
+	///
+	/// - Important: Only available on iOS 10.0 or later
+	///
+	/// - Note: Defaults to `.light` if not set
 	@available(iOS 10.0, *) open var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle {
 		get {
 			guard let _feedbackStyle = _feedbackStyle,
@@ -169,12 +199,14 @@ import UIKit
 		renderer.trackLayer.addSublayer(renderer.thumbLayer)
 		
 		updateLayerFrames()
-		
-		if #available(iOS 10.0, *) {
-			feedbackStyle = .light
-		}
 	}
 	
+	/// Sets the value of the slider.
+	///
+	/// - Parameter newValue: the value to set the slider to
+	/// - Parameter animated: whether or not to perform an asynchronous visual animation of the slider transitioning to the new value
+	///
+	/// - Postcondition: If the value passed in is greater than `minimum` and less than `maximum`, the `value` of the slider will be set to that value, otherwise it will be capped to within that range.
 	open func setValue(_ newValue: Float, animated: Bool) {
 		value = min(maximum, max(minimum, newValue))
 		renderer.setValue(value, animated: animated)
@@ -195,7 +227,10 @@ import UIKit
 		sendActions(for: .valueChanged)
 	}
 	
-	public func valueAsPercentage(locale: Locale = Locale.current) -> String? {
+	/// Returns a string containing the value of the slider as a percentage
+	///
+	/// - Parameter locale: The `Locale` to format the value for; defaults to `Locale.current`
+	open func valueAsPercentage(locale: Locale = Locale.current) -> String? {
 		let valueNumber = (value - minimum) / (maximum - minimum) as NSNumber
 		let valueFormatter = NumberFormatter()
 		valueFormatter.numberStyle = .percent
@@ -205,7 +240,7 @@ import UIKit
 		return valueFormatter.string(from: valueNumber)
 	}
 	
-	open func updateAccessibility() {
+	private func updateAccessibility() {
 		accessibilityValue = valueAsPercentage()
 	}
 	
@@ -299,7 +334,7 @@ import UIKit
 		renderer.updateBounds(bounds)
 	}
 	
-	// returns the position along the value axis for a given control value
+	/// returns the position along the value axis for a given control value
 	func positionForValue(_ value: Float) -> CGFloat {
 		switch direction {
 		case .rightToLeft, .leftToRight:
@@ -318,7 +353,7 @@ import UIKit
 		}
 	}
 	
-	// returns the control value for a given position along the value axis
+	/// returns the control value for a given position along the value axis
 	func valueForPosition(_ position: CGFloat) -> Float {
 		switch direction {
 		case .rightToLeft, .leftToRight:
@@ -328,7 +363,7 @@ import UIKit
 		}
 	}
 	
-	// returns whichever axis in a Point represents the value axis for this particular slider
+	/// returns whichever axis in a Point represents the value axis for this particular slider
 	func valueAxisFrom(_ point: CGPoint, accountForDirection: Bool = true) -> CGFloat {
 		switch direction {
 		case .leftToRight:

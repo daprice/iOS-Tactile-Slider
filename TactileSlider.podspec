@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TactileSlider'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Easy-to-grab slider control inspired by Control Center and HomeKit.'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Dale Price' => 'daprice@mac.com' }
   s.source           = { :git => 'https://github.com/daprice/iOS-Tactile-Slider.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://mastodon.technology/@dale_price'
 
   s.ios.deployment_target = '8.0'
   s.swift_version = '4.2'
@@ -38,6 +38,6 @@ A slider control designed to be easy to grab and use because it can be dragged o
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
