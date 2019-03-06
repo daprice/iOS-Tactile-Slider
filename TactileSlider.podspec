@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TactileSlider'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Easy-to-grab slider control inspired by Control Center and HomeKit.'
 
 # This description is used to generate tags and improve search results.
