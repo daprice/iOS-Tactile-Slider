@@ -99,7 +99,7 @@ import UIKit
 	}
 	
 	/// The radius of the rounded corners of the slider
-	@IBInspectable var cornerRadius: CGFloat = 16 {
+	@IBInspectable open var cornerRadius: CGFloat = 16 {
 		didSet {
 			renderer.cornerRadius = cornerRadius
 		}
