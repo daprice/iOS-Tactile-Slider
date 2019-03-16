@@ -99,9 +99,15 @@ import UIKit
 	}
 	
 	/// The radius of the rounded corners of the slider
-	@IBInspectable open var cornerRadius: CGFloat = 16 {
+	///
+	/// Note: If this is set to a negative value (or left as default in interface builder), the corner radius will be automatically determined from the size of the bounds
+	@IBInspectable open var cornerRadius: CGFloat = -1 {
 		didSet {
-			renderer.cornerRadius = cornerRadius
+			if cornerRadius < 0 {
+				renderer.cornerRadius = min(bounds.width, bounds.height) / 3.3
+			} else {
+				renderer.cornerRadius = cornerRadius
+			}
 		}
 	}
 	
@@ -331,6 +337,9 @@ import UIKit
 	}
 	
 	private func updateLayerFrames() {
+		if cornerRadius < 0 {
+			renderer.cornerRadius = min(bounds.width, bounds.height) / 3.3
+		}
 		renderer.updateBounds(bounds)
 	}
 	
