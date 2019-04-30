@@ -187,11 +187,13 @@ import UIKit
 		accessibilityTraits.insert(UIAccessibilityTraits.adjustable)
 		
 		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
+		dragGestureRecognizer.cancelsTouchesInView = false
 		addGestureRecognizer(dragGestureRecognizer)
 		
 		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
 		tapGestureRecognizer.numberOfTapsRequired = 1
 		tapGestureRecognizer.numberOfTouchesRequired = 1
+		tapGestureRecognizer.cancelsTouchesInView = false
 		addGestureRecognizer(tapGestureRecognizer)
 		
 		renderer.tactileSlider = self
