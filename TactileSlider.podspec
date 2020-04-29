@@ -29,7 +29,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
   s.social_media_url = 'https://mastodon.technology/@dale_price'
 
   s.ios.deployment_target = '8.0'
-  s.swift_version = '4.2'
+  s.swift_version = '5.0'
 
   s.source_files = 'TactileSlider/Classes/**/*'
   
