@@ -328,6 +328,11 @@ import UIKit
 	
 	// MARK: - Graphics
 	
+	open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+		renderer.trackBackground = trackBackground
+		renderer.thumbTint = thumbTint
+	}
+	
 	override open func layoutSubviews() {
 		super.layoutSubviews()
 		self.setNeedsDisplay()
