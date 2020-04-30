@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23G-Tb-ylv" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="28" width="295" height="50"/>
+                                <rect key="frame" x="40" y="8" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="65V-NR-045"/>
                                 </constraints>
@@ -41,7 +39,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-j3-34d" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="94" width="295" height="50"/>
+                                <rect key="frame" x="40" y="74" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m7t-26-N1I"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="m8H-yC-WUi"/>
@@ -61,7 +59,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-ku-zjX" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="160" width="50" height="200"/>
+                                <rect key="frame" x="40" y="140" width="50" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="4TB-1l-iv7"/>
                                     <constraint firstAttribute="width" constant="50" id="lfI-TE-EZW"/>
@@ -81,7 +79,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-fM-pCA" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="106" y="160" width="50" height="200"/>
+                                <rect key="frame" x="106" y="140" width="50" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="58T-8W-JNq"/>
                                     <constraint firstAttribute="width" constant="50" id="opn-u5-eqk"/>
@@ -101,7 +99,6 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ZDQ-j3-34d" firstAttribute="top" secondItem="23G-Tb-ylv" secondAttribute="bottom" constant="16" id="9x1-B7-qL8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZDQ-j3-34d" secondAttribute="trailing" constant="24" id="aki-QV-i5v"/>

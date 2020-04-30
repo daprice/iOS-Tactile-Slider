@@ -85,14 +85,26 @@ import UIKit
 	@IBInspectable open var scaleUpWhenInUse: Bool = false
 	
 	/// The color of the track the slider slides along
-	@IBInspectable open var trackBackground: UIColor = UIColor.darkGray {
+	@IBInspectable open var trackBackground: UIColor = {
+		if #available(iOS 13, *) {
+			return .systemFill
+		} else {
+			return .darkGray
+		}
+	}() {
 		didSet {
 			renderer.trackBackground = trackBackground
 		}
 	}
 	
 	/// The color of the value indicator part of the slider
-	@IBInspectable open var thumbTint: UIColor = UIColor.white {
+	@IBInspectable open var thumbTint: UIColor = {
+		if #available(iOS 13, *) {
+			return .label
+		} else {
+			return .white
+		}
+	}() {
 		didSet {
 			renderer.thumbTint = thumbTint
 		}
