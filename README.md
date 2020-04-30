@@ -7,7 +7,7 @@
 
 A slider control designed to be easy to grab and use because it can be dragged or tapped from anywhere along its track, similar to the sliders in Control Center and HomeKit.
 
-![Animated gif of TactileSliders animating to values](Screenshots/animated.gif)
+<video src="Screenshots/in_use.mp4" width="363" height="358" controls playsinline preload></video>
 
 ## Features
 
@@ -64,8 +64,8 @@ slider.scaleUpWhenInUse = true // make the slider puff up slightly while being d
 ### Changing colors and appearance
 
 ```swift
-slider.trackBackground = UIColor.black.withAlpha(0.8)
-slider.thumbTint = UIColor.blue
+slider.trackBackground = UIColor.black.withAlpha(0.8) // use translucent black for the slider track
+slider.tintColor = UIColor.systemGreen // use dynamic green for the slider thumb
 slider.cornerRadius = 12
 ```
 
