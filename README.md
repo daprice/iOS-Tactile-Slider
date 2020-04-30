@@ -14,6 +14,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
 - Can be dragged or (optionally) tapped to set a value
 - Supports horizontal and vertical orientation in either direction
 - IBDesignable – colors, values, rounded corners, and behavior can be customized in Interface Builder or programatically
+- Supports light & dark appearance using semantic system colors by default (iOS 13+)
 - Adjustable haptic feedback (iOS 10+)
 - VoiceOver support
 

@@ -78,13 +78,15 @@ import UIKit
 	
 	/// If true, a single tap anywhere in the slider will set it to that value
 	///
-	/// - Remark: Users may accidentally activate this feature while trying to make very small adjustments. If the context lends to making very small adjustments with the slider, consider disabling this feature.
+	/// - Remark: Users may accidentally activate this feature while trying to make very small adjustments. If the intended use case involves making very small adjustments with the slider, consider disabling this feature.
 	@IBInspectable open var enableTapping: Bool = true
 	
 	/// If true, the slider will animate its scale when it is being dragged
 	@IBInspectable open var scaleUpWhenInUse: Bool = false
 	
 	/// The color of the track the slider slides along
+	///
+	/// - Important: This defaults to the dynamic system fill color on iOS 13 or greater, but to darkGray on older versions
 	@IBInspectable open var trackBackground: UIColor = {
 		if #available(iOS 13, *) {
 			return .systemFill
@@ -98,6 +100,8 @@ import UIKit
 	}
 	
 	/// The color of the value indicator part of the slider
+	///
+	/// - Important: This defaults to a dynamic system color on iOS 13 or greater, but to white on older versions
 	@IBInspectable open var thumbTint: UIColor = {
 		if #available(iOS 13, *) {
 			return .label
