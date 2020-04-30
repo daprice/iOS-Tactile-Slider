@@ -86,31 +86,16 @@ import UIKit
 	
 	/// The color of the track the slider slides along
 	///
-	/// - Important: This defaults to the dynamic system fill color on iOS 13 or greater, but to darkGray on older versions
+	/// - Important: This defaults to the dynamic system fill color on iOS 13 or greater, but to lightGray on older versions
 	@IBInspectable open var trackBackground: UIColor = {
 		if #available(iOS 13, *) {
 			return .systemFill
 		} else {
-			return .darkGray
+			return .lightGray
 		}
 	}() {
 		didSet {
 			renderer.trackBackground = trackBackground
-		}
-	}
-	
-	/// The color of the value indicator part of the slider
-	///
-	/// - Important: This defaults to a dynamic system color on iOS 13 or greater, but to white on older versions
-	@IBInspectable open var thumbTint: UIColor = {
-		if #available(iOS 13, *) {
-			return .label
-		} else {
-			return .white
-		}
-	}() {
-		didSet {
-			renderer.thumbTint = thumbTint
 		}
 	}
 	
@@ -214,8 +199,7 @@ import UIKit
 		
 		renderer.tactileSlider = self
 		renderer.cornerRadius = cornerRadius
-		renderer.trackBackground = trackBackground
-		renderer.thumbTint = thumbTint
+		traitCollectionDidChange(nil)
 		
 		layer.backgroundColor = UIColor.clear.cgColor
 		layer.isOpaque = false
@@ -346,7 +330,11 @@ import UIKit
 	
 	open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		renderer.trackBackground = trackBackground
-		renderer.thumbTint = thumbTint
+		tintColorDidChange()
+	}
+	
+	open override func tintColorDidChange() {
+		renderer.thumbTint = tintColor
 	}
 	
 	override open func layoutSubviews() {

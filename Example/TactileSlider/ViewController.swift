@@ -18,7 +18,7 @@ class ViewController: UIViewController {
 		if #available(iOS 13, *) {
 			self.view.backgroundColor = UIColor.systemBackground
 		} else {
-			self.view.backgroundColor = UIColor.lightGray
+			self.view.backgroundColor = UIColor.white
 		}
     }
 
