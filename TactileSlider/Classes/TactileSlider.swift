@@ -78,8 +78,43 @@ import UIKit
 	
 	/// If true, a single tap anywhere in the slider will set it to that value
 	///
-	/// - Remark: Users may accidentally activate this feature while trying to make very small adjustments. If the intended use case involves making very small adjustments with the slider, consider disabling this feature.
-	@IBInspectable open var enableTapping: Bool = true
+	/// On iOS 9 or later, direct taps or indirect (trackpad or mouse) clicks can be specified using the `allowedTapTypes` property.
+	///
+	/// - Remark: Users may accidentally activate this feature while trying to make very small adjustments. If the intended use case involves making very small, precise adjustments with the slider, consider disabling this feature or restricting it to indirect touches only using `allowedTapTypes`.
+	@IBInspectable open var enableTapping: Bool = true {
+		didSet {
+			setTapEnabled()
+		}
+	}
+	
+	/// An array of `UITouch.TouchType`s used to distinguish the type of touches for the `enableTapping` feature.
+	///
+	/// This is a wrapper around the [UITapGestureRecognizer](https://developer.apple.com/documentation/uikit/uigesturerecognizer)'s [allowedTouchTypes](https://developer.apple.com/documentation/uikit/uigesturerecognizer/1624223-allowedtouchtypes) property.
+	///
+	/// If `enableTapping` is `true`, this can be used to filter direct (e.g. finger) or indirect (e.g. trackpad) touches.
+	///
+	/// - Requires: iOS 9
+	/// - Requires: `enableTapping == true`, otherwise no effect
+	@available(iOS 9.0, *)
+	open var allowedTapTypes: [NSNumber] {
+		get {
+			return tapGestureRecognizer.allowedTouchTypes
+		}
+		set(newAllowedTapTypes) {
+			tapGestureRecognizer.allowedTouchTypes = newAllowedTapTypes
+		}
+	}
+	
+	/// If true, the slider can be adjusted by scrolling with a pointing device (e.g. two-finger scrolling with a trackpad or scrolling a mouse wheel).
+	///
+	/// - Requires: iOS 13.4
+	@IBInspectable open var isScrollingEnabled: Bool = true {
+		didSet {
+			if #available(iOS 13.4, *) {
+				setScrollingEnabled()
+			}
+		}
+	}
 	
 	/// If true, the slider will animate its scale when it is being dragged
 	@IBInspectable open var scaleUpWhenInUse: Bool = false
@@ -143,6 +178,9 @@ import UIKit
 	
 	private let renderer = TactileSliderLayerRenderer()
 	
+	private var dragGestureRecognizer: UIPanGestureRecognizer!
+	private var tapGestureRecognizer: UITapGestureRecognizer!
+	
 	// gross workaround for not being able to use @available on stored properties, from https://www.klundberg.com/blog/Swift-2-and-@available-properties/
 	private var _minMaxFeedbackGenerator: AnyObject?
 	@available(iOS 10.0, *) private var minMaxFeedbackGenerator: UIImpactFeedbackGenerator? {
@@ -189,15 +227,20 @@ import UIKit
 		isAccessibilityElement = true
 		accessibilityTraits.insert(UIAccessibilityTraits.adjustable)
 		
-		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
+		dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan))
 		dragGestureRecognizer.cancelsTouchesInView = false
 		addGestureRecognizer(dragGestureRecognizer)
 		
-		let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+		tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
 		tapGestureRecognizer.numberOfTapsRequired = 1
 		tapGestureRecognizer.numberOfTouchesRequired = 1
 		tapGestureRecognizer.cancelsTouchesInView = false
 		addGestureRecognizer(tapGestureRecognizer)
+		
+		setTapEnabled()
+		if #available(iOS 13.4, *) {
+			setScrollingEnabled()
+		}
 		
 		renderer.tactileSlider = self
 		renderer.cornerRadius = cornerRadius
@@ -257,6 +300,19 @@ import UIKit
 	
 	// MARK: - gesture handling
 	
+	private func setTapEnabled() {
+		tapGestureRecognizer.isEnabled = enableTapping
+	}
+	
+	@available(iOS 13.4, *)
+	private func setScrollingEnabled() {
+		if isScrollingEnabled {
+			dragGestureRecognizer.allowedScrollTypesMask = UIScrollTypeMask.all
+		} else {
+			dragGestureRecognizer.allowedScrollTypesMask = []
+		}
+	}
+	
 	@objc func didPan(sender: UIPanGestureRecognizer) {
 		let translation = sender.translation(in: self)
 		let valueChange = valueChangeForTranslation(translation)
@@ -311,8 +367,6 @@ import UIKit
 	}
 	
 	@objc func didTap(sender: UITapGestureRecognizer) {
-		guard enableTapping else { return }
-		
 		if sender.state == .ended {
 			let tapLocation: CGFloat
 			if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
