@@ -28,8 +28,9 @@ iOS 8.0+ (iOS 10.0+ required for haptic feedback)
 
 ## Installation
 
-TactileSlider is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+TactileSlider is available as a Swift package or through [CocoaPods](https://cocoapods.org).
+
+To install it using CocoaPods, simply add the following line to your Podfile:
 
 ```ruby
 pod 'TactileSlider'
