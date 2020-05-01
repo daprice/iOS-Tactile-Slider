@@ -86,10 +86,12 @@ import UIKit
 	
 	/// The color of the track the slider slides along
 	///
-	/// - Important: This defaults to the dynamic system fill color on iOS 13 or greater, but to lightGray on older versions
+	/// - Note: By default, this is set to `tertiarySystemFill`, which the [documentation](https://developer.apple.com/documentation/uikit/uicolor/ui_element_colors) specifies is for filling large shapes. Be sure to use an appropriate fill color for the size of the control.
+	///
+	/// - Important: On iOS versions prior to iOS 13 that do not support dynamic system colors, this defaults to `lightGray`.
 	@IBInspectable open var trackBackground: UIColor = {
 		if #available(iOS 13, *) {
-			return .systemFill
+			return .tertiarySystemFill
 		} else {
 			return .lightGray
 		}
