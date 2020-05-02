@@ -173,6 +173,7 @@ import UIKit
 	override open var isEnabled: Bool {
 		didSet {
 			renderer.grayedOut = !isEnabled
+			tintAdjustmentMode = isEnabled ? .automatic : .dimmed
 		}
 	}
 	
