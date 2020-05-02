@@ -17,6 +17,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
 - Supports light & dark appearance using semantic system colors by default (iOS 13+)
 - Adjustable haptic feedback (iOS 10+)
 - VoiceOver support
+- Supports pointer (e.g. trackpad or mouse) based scrolling on iPadOS (iOS 13.4+)
 
 ## Example
 
@@ -24,7 +25,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-iOS 8.0+ (iOS 10.0+ required for haptic feedback)
+iOS 8.0+
+
+- iOS 10.0+ required for haptic feedback
+- iPadOS 13.4+ required for pointer use
 
 ## Installation
 
@@ -59,7 +63,8 @@ slider.reverseValueAxis = true
 ```swift
 slider.isContinuous = false
 slider.enableTapping = false // allow or disallow tapping anywhere on the slider track to instantly set a value
-slider.scaleUpWhenInUse = true // make the slider puff up slightly while being dragged
+slider.feedbackStyle = .medium // customize haptic feedback
+slider.isScrollingEnabled = false // allow or disallow scrolling to adjust the slider using a connected pointing device on iPadOS
 ```
 
 ### Changing colors and appearance
@@ -68,6 +73,7 @@ slider.scaleUpWhenInUse = true // make the slider puff up slightly while being d
 slider.trackBackground = UIColor.black.withAlpha(0.8) // use translucent black for the slider track
 slider.tintColor = UIColor.systemGreen // use dynamic green for the slider thumb
 slider.cornerRadius = 12
+slider.isPointerInteractionEnabled = true // display a hover effect when under the pointer on iPadOS
 ```
 
 ### Interface Builder

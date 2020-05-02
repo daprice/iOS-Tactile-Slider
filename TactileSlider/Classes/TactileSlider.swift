@@ -108,6 +108,8 @@ import UIKit
 	/// If true, the slider can be adjusted by scrolling with a pointing device (e.g. two-finger scrolling with a trackpad or scrolling a mouse wheel).
 	///
 	/// - Requires: iOS 13.4
+	///
+	///   This setting only affects iPadOS with a connected pointing device.
 	@IBInspectable open var isScrollingEnabled: Bool = true {
 		didSet {
 			if #available(iOS 13.4, *) {
@@ -116,12 +118,16 @@ import UIKit
 		}
 	}
 	
-	/// If true, the slider will use a hover effect as the pointer hovers over it.
+	/// If true, the slider will display a hover effect as the pointer hovers over it.
 	///
 	/// Override the `pointerStyle(with:)` method to customize the effect.
 	///
+	/// - Note: Enabling this option is intended to communicate to the user that they can easily perform an action using the pointer. Enabling `isScrollingEnabled`, `enableTapping`, __and__ allowing at least indirect touches using `allowedTapTypes` is recommended if this option is enabled.
+	///
 	/// - Requires: iOS 13.4
-	@IBInspectable open var isPointerInteractionEnabled: Bool = true
+	///
+	///   This setting only affects iPadOS with a connected pointing device.
+	@IBInspectable open var isPointerInteractionEnabled: Bool = false
 	
 	/// If true, the slider will animate its scale when it is being dragged
 	///
@@ -130,7 +136,7 @@ import UIKit
 	
 	/// The color of the track the slider slides along
 	///
-	/// - Note: By default, this is set to `tertiarySystemFill`, which the [documentation](https://developer.apple.com/documentation/uikit/uicolor/ui_element_colors) specifies is for filling large shapes. Be sure to use an appropriate fill color for the size of the control.
+	/// - Note: By default, this is set to `tertiarySystemFill`, which is intended for filling large shapes. Be sure to [choose an appropriate fill color](https://developer.apple.com/documentation/uikit/uicolor/ui_element_colors) for the size of the control.
 	///
 	/// - Important: On iOS versions prior to iOS 13 that do not support dynamic system colors, this defaults to `lightGray`.
 	@IBInspectable open var trackBackground: UIColor = {
