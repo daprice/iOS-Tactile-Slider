@@ -19,8 +19,21 @@ internal class TactileSliderLayerRenderer {
 	
 	var thumbTint: UIColor = .white {
 		didSet {
-			thumbLayer.fillColor = thumbTint.cgColor
+			thumbLayer.fillColor = grayedOut ? disabledThumbTint.cgColor : thumbTint.cgColor
 		}
+	}
+	
+	private var disabledThumbTint: UIColor {
+		// get HSV from normal tint color
+		var tintHue: CGFloat = 0
+		var tintSaturation: CGFloat = 0
+		var tintBrightness: CGFloat = 0
+		var tintAlpha: CGFloat = 0
+		guard thumbTint.getHue(&tintHue, saturation: &tintSaturation, brightness: &tintBrightness, alpha: &tintAlpha) else {
+			return UIColor.gray
+		}
+		
+		return UIColor(hue: tintHue, saturation: tintSaturation/10, brightness: tintBrightness*0.8, alpha: tintAlpha*0.6)
 	}
 	
 	var cornerRadius: CGFloat = 10 {
@@ -77,8 +90,10 @@ internal class TactileSliderLayerRenderer {
 	}
 	
 	private func updateGrayedOut() {
-		let alpha: Float = grayedOut ? 0.25 : 1
+		let alpha: Float = grayedOut ? 0.6 : 1
 		trackLayer.opacity = alpha
+		
+		thumbLayer.fillColor = grayedOut ? disabledThumbTint.cgColor : thumbTint.cgColor
 	}
 	
 	private func updatePopUp() {
