@@ -78,7 +78,7 @@ slider.isPointerInteractionEnabled = true // display a hover effect when under t
 
 ### Interface Builder
 
-![screenshot of Xcode Interface Builder demonstrating a TactileSlider being customized using the graphical interface](Screenshots/IBDesignable.png)
+<img src="Screenshots/IBDesignable.png" alt="screenshot of Xcode Interface Builder demonstrating a TactileSlider being customized using the graphical interface" width="764" height="514" />
 
 ## Author
 
