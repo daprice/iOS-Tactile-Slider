@@ -116,7 +116,16 @@ import UIKit
 		}
 	}
 	
+	/// If true, the slider will use a hover effect as the pointer hovers over it.
+	///
+	/// Override the `pointerStyle(with:)` method to customize the effect.
+	///
+	/// - Requires: iOS 13.4
+	@IBInspectable open var isPointerInteractionEnabled: Bool = true
+	
 	/// If true, the slider will animate its scale when it is being dragged
+	///
+	/// - Warning: Not recommended together with `isPointerInteractionEnabled = true`
 	@IBInspectable open var scaleUpWhenInUse: Bool = false
 	
 	/// The color of the track the slider slides along
@@ -142,7 +151,7 @@ import UIKit
 	@IBInspectable open var cornerRadius: CGFloat = -1 {
 		didSet {
 			if cornerRadius < 0 {
-				renderer.cornerRadius = min(bounds.width, bounds.height) / 3.3
+				renderer.cornerRadius = automaticCornerRadius
 			} else {
 				renderer.cornerRadius = cornerRadius
 			}
@@ -173,6 +182,14 @@ import UIKit
 			return .bottomToTop
 		case (true, true):
 			return .topToBottom
+		}
+	}
+	
+	internal var automaticCornerRadius: CGFloat {
+		if cornerRadius < 0 {
+			return min(bounds.width, bounds.height) / 3.3
+		} else {
+			return cornerRadius
 		}
 	}
 	
@@ -240,10 +257,11 @@ import UIKit
 		setTapEnabled()
 		if #available(iOS 13.4, *) {
 			setScrollingEnabled()
+			setUpPointerInteraction()
 		}
 		
 		renderer.tactileSlider = self
-		renderer.cornerRadius = cornerRadius
+		renderer.cornerRadius = automaticCornerRadius
 		traitCollectionDidChange(nil)
 		
 		layer.backgroundColor = UIColor.clear.cgColor
@@ -405,7 +423,7 @@ import UIKit
 	
 	private func updateLayerFrames() {
 		if cornerRadius < 0 {
-			renderer.cornerRadius = min(bounds.width, bounds.height) / 3.3
+			renderer.cornerRadius = automaticCornerRadius
 		}
 		renderer.updateBounds(bounds)
 	}

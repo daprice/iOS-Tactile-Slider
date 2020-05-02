@@ -17,6 +17,7 @@
 		7D22590740845F9B82469126414721B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		9F62C3B169D7F16E98632F2C7B6B0101 /* Pods-TactileSlider_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */; };
 		B841130550B404F0DDB33730669F0D84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
+		E9941CAE245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */; };
 		ED20AFD6A38250EC237C8C1C7326F68D /* TactileSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Example-dummy.m"; sourceTree = "<group>"; };
 		E3E795948B8888137A6FAE4E55759715 /* Pods-TactileSlider_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E413B0039A0E0F4B05C71DD34E0CA4FB /* TactileSlider.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TactileSlider.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TactileSlider+UIPointerInteractionDelegate.swift"; path = "TactileSlider/Classes/TactileSlider+UIPointerInteractionDelegate.swift"; sourceTree = "<group>"; };
 		F74D41FD01A56E075CF50A15DFC67B68 /* Pods-TactileSlider_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Example-umbrella.h"; sourceTree = "<group>"; };
 		FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSlider.swift; path = TactileSlider/Classes/TactileSlider.swift; sourceTree = "<group>"; };
 		FBAA25ADA0FF66EB54B68A9E65A92092 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */,
+				E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */,
 				BFE1A51BEF7ECD1634EA4E2E590ED3B6 /* TactileSliderLayerRenderer.swift */,
 				6095C34B06EA75BF182DCEF2EFA7BFD9 /* Pod */,
 				036258E23CF4EBB604A0E358275E117A /* Support Files */,
@@ -325,6 +328,9 @@
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 1140;
 				TargetAttributes = {
+					19A572CC78ED773B2A9F51CF6767B229 = {
+						LastSwiftMigration = 1140;
+					};
 					A0AABF74542E1A420FEDCB29FFA2C0D4 = {
 						LastSwiftMigration = 1140;
 					};
@@ -388,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07213C573515BE4E884E2B6442061364 /* TactileSlider-dummy.m in Sources */,
+				E9941CAE245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */,
 				ED20AFD6A38250EC237C8C1C7326F68D /* TactileSlider.swift in Sources */,
 				75F827CA44D9C26B5BD55809769C9B4B /* TactileSliderLayerRenderer.swift in Sources */,
 			);
@@ -489,6 +496,7 @@
 			baseConfigurationReference = 8BCAFA9DFB54F615F92F897F6D7D6913 /* Pods-TactileSlider_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -511,6 +519,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -683,6 +693,7 @@
 			baseConfigurationReference = C3B0503E0532A7B6A67B54F0F0D7394F /* Pods-TactileSlider_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -705,6 +716,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
