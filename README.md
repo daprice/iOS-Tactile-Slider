@@ -7,7 +7,7 @@
 
 A slider control designed to be easy to grab and use because it can be dragged or tapped from anywhere along its track, similar to the sliders in Control Center and HomeKit.
 
-<img src="Screenshots/in_use.gif" alt="Animation of TactileSliders in various orientations being clicked and dragged in the iOS simulator, followed by a transition from light to dark appearance" width="363" height="358" />
+<img src="Screenshots/in_use.gif" alt="Animation of TactileSliders in various orientations being clicked and dragged in the iOS simulator, followed by a transition from light to dark appearance" width="363" />
 
 ## Features
 
@@ -78,7 +78,7 @@ slider.isPointerInteractionEnabled = true // display a hover effect when under t
 
 ### Interface Builder
 
-<img src="Screenshots/IBDesignable.png" alt="screenshot of Xcode Interface Builder demonstrating a TactileSlider being customized using the graphical interface" width="764" height="514" />
+<img src="Screenshots/IBDesignable.png" alt="screenshot of Xcode Interface Builder demonstrating a TactileSlider being customized using the graphical interface" width="764" />
 
 ## Author
 
