@@ -56,6 +56,7 @@
 		369A0D0B24954A080073B427 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		369A0D0C24954A080073B427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		369A0D0D24954A080073B427 /* TactileSlider.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TactileSlider.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		36B4258724955C17006BAD9A /* InfoTactileSlider.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = InfoTactileSlider.plist; sourceTree = "<group>"; };
 		36C352BA24954F4D00F1E402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		36C352BB24954F4D00F1E402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				369A0CFF249548810073B427 /* Info.plist */,
+				36B4258724955C17006BAD9A /* InfoTactileSlider.plist */,
 				369A0CFE249548810073B427 /* AppDelegate.swift */,
 				369A0CF8249548810073B427 /* ViewController.swift */,
 				369A0CFD249548810073B427 /* Images.xcassets */,
@@ -309,6 +311,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/InfoTactileSlider.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 2.0.1;
@@ -342,6 +345,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "$(SRCROOT)/Example/InfoTactileSlider.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 2.0.1;
