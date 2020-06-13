@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="vXZ-lx-hvc" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23G-Tb-ylv" customClass="TactileSlider" customModule="TactileSlider">
+                                <rect key="frame" x="40" y="8" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="65V-NR-045"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-j3-34d" customClass="TactileSlider" customModule="TactileSlider">
+                                <rect key="frame" x="40" y="74" width="295" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m7t-26-N1I"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="m8H-yC-WUi"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-ku-zjX" customClass="TactileSlider" customModule="TactileSlider">
+                                <rect key="frame" x="40" y="140" width="50" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="4TB-1l-iv7"/>
+                                    <constraint firstAttribute="width" constant="50" id="lfI-TE-EZW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-fM-pCA" customClass="TactileSlider" customModule="TactileSlider">
+                                <rect key="frame" x="106" y="140" width="50" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="58T-8W-JNq"/>
+                                    <constraint firstAttribute="width" constant="50" id="opn-u5-eqk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="vertical" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="reverseValueAxis" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minimum">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maximum">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.14999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZDQ-j3-34d" firstAttribute="top" secondItem="23G-Tb-ylv" secondAttribute="bottom" constant="16" id="9x1-B7-qL8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZDQ-j3-34d" secondAttribute="trailing" constant="24" id="aki-QV-i5v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="23G-Tb-ylv" secondAttribute="trailing" constant="24" id="bEI-pj-qdL"/>
+                            <constraint firstItem="23G-Tb-ylv" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="8" id="crd-bo-fDu"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="fP7-7u-YrP"/>
+                            <constraint firstItem="BEf-fM-pCA" firstAttribute="leading" secondItem="NV5-ku-zjX" secondAttribute="trailing" constant="16" id="fbS-AV-w6f"/>
+                            <constraint firstItem="BEf-fM-pCA" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="kMj-ON-M6o"/>
+                            <constraint firstItem="ZDQ-j3-34d" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="okf-zu-ho2"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="top" secondItem="ZDQ-j3-34d" secondAttribute="bottom" constant="16" id="rJJ-6O-Sxg"/>
+                            <constraint firstItem="23G-Tb-ylv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="sOJ-HB-E3c"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="wxE-GU-YDh"/>
+                            <constraint firstItem="NV5-ku-zjX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="24" id="ynt-4C-CJw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="56.799999999999997" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>

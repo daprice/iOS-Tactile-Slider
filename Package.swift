@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "TactileSlider",
-	platforms: [
+	  platforms: [
         .iOS(.v8),
     ],
     products: [
@@ -24,7 +24,7 @@ let package = Package(
         .target(
             name: "TactileSlider",
             dependencies: [],
-			path: "TactileSlider/Classes"),
+			path: "TactileSlider"),
     ],
 	swiftLanguageVersions: [
 		.v5

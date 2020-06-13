@@ -1,6 +1,0 @@
-framework module TactileSlider {
-  umbrella header "TactileSlider-umbrella.h"
-
-  export *
-  module * { export * }
-}
