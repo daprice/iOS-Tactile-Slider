@@ -49,16 +49,15 @@
 		369A0CC6249546260073B427 /* TactileSlider+UIPointerInteractionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TactileSlider+UIPointerInteractionDelegate.swift"; sourceTree = "<group>"; };
 		369A0CE02495469F0073B427 /* TactileSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TactileSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		369A0CF8249548810073B427 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		369A0CFA249548810073B427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		369A0CFC249548810073B427 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		369A0CFD249548810073B427 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		369A0CFE249548810073B427 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		369A0CFF249548810073B427 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		369A0D06249548EB0073B427 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		369A0D0A24954A080073B427 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		369A0D0B24954A080073B427 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = SOURCE_ROOT; };
 		369A0D0C24954A080073B427 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		369A0D0D24954A080073B427 /* TactileSlider.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = TactileSlider.podspec; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		36C352BA24954F4D00F1E402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		36C352BB24954F4D00F1E402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,7 +83,6 @@
 		369A0CC0249546260073B427 /* TactileSlider */ = {
 			isa = PBXGroup;
 			children = (
-				369A0D06249548EB0073B427 /* Info.plist */,
 				369A0CC4249546260073B427 /* TactileSliderLayerRenderer.swift */,
 				369A0CC5249546260073B427 /* TactileSlider.swift */,
 				369A0CC6249546260073B427 /* TactileSlider+UIPointerInteractionDelegate.swift */,
@@ -211,7 +209,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				English,
-				en,
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
@@ -279,7 +276,7 @@
 		369A0CF9249548810073B427 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				369A0CFA249548810073B427 /* Base */,
+				36C352BA24954F4D00F1E402 /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -287,7 +284,7 @@
 		369A0CFB249548810073B427 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				369A0CFC249548810073B427 /* Base */,
+				36C352BB24954F4D00F1E402 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -318,7 +315,7 @@
 				MARKETING_VERSION = 2.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.best-ios-apps.TactileSlider";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.tactile-slider";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -351,7 +348,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MARKETING_VERSION = 2.0.1;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "de.best-ios-apps.TactileSlider";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.tactile-slider";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
