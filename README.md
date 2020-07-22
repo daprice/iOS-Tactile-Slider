@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/TactileSlider.svg?style=flat)](https://cocoapods.org/pods/TactileSlider)
 [![Platform](https://img.shields.io/cocoapods/p/TactileSlider.svg?style=flat)](https://cocoapods.org/pods/TactileSlider)
 
-A slider control designed to be easy to grab and use because it can be dragged or tapped from anywhere along its track, similar to the sliders in Control Center and HomeKit.
+A slider control designed to be easy to grab and use because it can be dragged or tapped from anywhere along its track, similar to the sliders in Control Center and HomeKit. Because this type of slider graphically represents direct manipulation of a value, it should be used for live adjustment of values whose changes can be directly observed in real time (such as audio volume or the brightness of a light).
 
 <img src="Screenshots/in_use.gif" alt="Animation of TactileSliders in various orientations being clicked and dragged in the iOS simulator, followed by a transition from light to dark appearance" width="363" />
 

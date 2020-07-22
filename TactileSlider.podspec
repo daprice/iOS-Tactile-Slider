@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TactileSlider'
-  s.version          = '2.0.0'
+  s.version          = '2.0.1'
   s.summary          = 'Easy-to-grab slider control inspired by Control Center and HomeKit.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
 A slider control designed to be easy to grab and use because it can be dragged or tapped from anywhere along its track, similar to the sliders in Control Center and HomeKit.
@@ -36,8 +30,6 @@ A slider control designed to be easy to grab and use because it can be dragged o
   # s.resource_bundles = {
   #   'TactileSlider' => ['TactileSlider/Assets/*.png']
   # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  
   s.frameworks = 'UIKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -74,6 +74,8 @@ import UIKit
 	}
 	
 	/// If true, will send `valueChanged` actions at every point during a movement of the slider; if false, will only send when the user lifts their finger
+	///
+	/// - Important: Because `TactileSlider` is designed to represent the direct manipulation of a value by the user, setting `isContinuous` to `false` could lead to suboptimal user experience – the user may expect to be able to watch the value change in real time while manipulating the slider, not only when lifting their finger. Only set `isContinuous` to `false` when absolutely necessary.
 	@IBInspectable open var isContinuous: Bool = true
 	
 	/// If true, a single tap anywhere in the slider will set it to that value
