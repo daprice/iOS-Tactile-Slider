@@ -340,15 +340,14 @@ import UIKit
 	
 	@objc func didPan(sender: UIPanGestureRecognizer) {
 		let translation = sender.translation(in: self)
-		let valueChange = valueChangeForTranslation(translation)
+		let requestedValueChange = valueChangeForTranslation(translation)
 		
-		if value == minimum && valueChange < 0 {
+		if value == minimum && requestedValueChange < 0 {
 			// already hit minimum, don't change the value
-		} else if value == maximum && valueChange > 0 {
+		} else if value == maximum && requestedValueChange > 0 {
 			// already hit maximum, don't change the value
 		} else {
-			
-			let newValue = value + valueChange
+			let newValue = value + requestedValueChange
 			setValue(newValue, animated: false)
 			
 			// control feedback generator according to state
@@ -378,16 +377,16 @@ import UIKit
 				remainingTranslationAmount = positionDifferenceForValueDifference(newValue - value)
 			}
 			sender.setTranslation(CGPoint(x: remainingTranslationAmount, y: remainingTranslationAmount), in: self)
-			
-			if isContinuous || sender.state == .ended || sender.state == .cancelled {
-				sendActions(for: .valueChanged)
-			}
-			
-			if sender.state != .ended && sender.state != .cancelled && sender.state != .failed {
-				renderer.popUp = scaleUpWhenInUse
-			} else {
-				renderer.popUp = false
-			}
+		}
+		
+		if isContinuous || sender.state == .ended || sender.state == .cancelled {
+			sendActions(for: .valueChanged)
+		}
+		
+		if sender.state != .ended && sender.state != .cancelled && sender.state != .failed {
+			renderer.popUp = scaleUpWhenInUse
+		} else {
+			renderer.popUp = false
 		}
 	}
 	
