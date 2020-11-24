@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## TactileSlider
 
-Copyright (c) 2019 Dale Price <daprice@mac.com>
+Copyright (c) 2020 Dale Price <daprice@mac.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

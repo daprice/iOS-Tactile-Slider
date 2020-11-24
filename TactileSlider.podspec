@@ -22,7 +22,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
   s.source           = { :git => 'https://github.com/daprice/iOS-Tactile-Slider.git', :tag => s.version.to_s }
   s.social_media_url = 'https://mastodon.technology/@dale_price'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
   s.swift_version = '5.0'
 
   s.source_files = 'TactileSlider/Classes/**/*'

@@ -7,289 +7,270 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0448A6F6DEC26F75414DA05878EDB643 /* TactileSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C07801C6F54076629A588DBBE31BC646 /* TactileSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		07213C573515BE4E884E2B6442061364 /* TactileSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0195F191453DA7CC33E8E05FA5A6448A /* TactileSlider-dummy.m */; };
-		0E8913E597895F4215AE50C4355ABD7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		3192AD886BCF99BC8A9E2929A440301D /* Pods-TactileSlider_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39261411E54E41146081F391729CA9D5 /* Pods-TactileSlider_Tests-dummy.m */; };
-		6FEBB5E1F03594A45E626CCD322D8685 /* Pods-TactileSlider_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F74D41FD01A56E075CF50A15DFC67B68 /* Pods-TactileSlider_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75F827CA44D9C26B5BD55809769C9B4B /* TactileSliderLayerRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE1A51BEF7ECD1634EA4E2E590ED3B6 /* TactileSliderLayerRenderer.swift */; };
-		775FB9F7D6A12B23DA7B06ABCD65D7AD /* Pods-TactileSlider_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F7E237DD13786164C748590CD606E82 /* Pods-TactileSlider_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D22590740845F9B82469126414721B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		9F62C3B169D7F16E98632F2C7B6B0101 /* Pods-TactileSlider_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */; };
-		B841130550B404F0DDB33730669F0D84 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		E9941CAE245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */; };
-		ED20AFD6A38250EC237C8C1C7326F68D /* TactileSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */; };
+		1F91CA17619D066EC3A514C13760EC1A /* TactileSliderLayerRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AED37A66ADD4ED0FA6FC633796CC544 /* TactileSliderLayerRenderer.swift */; };
+		3D1539B186D61B08E1FF98AC4A7C2454 /* TactileSlider-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FCA3A55DBEC9B7C4BDFA6F7DCE34705 /* TactileSlider-dummy.m */; };
+		42AB11D9D0672C4086779CA16C905F9E /* TactileSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F024309C32F4E0C9CA3E31F471C0970B /* TactileSlider.swift */; };
+		463606B606CEC4E6C6659849899638E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		6FAB0B43B1B18385CC1AE7AEEDF0B4C4 /* Pods-TactileSlider_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1EF4514EEB06A11CDC4D54DF47E749A /* Pods-TactileSlider_Tests-dummy.m */; };
+		794FC712BCE6582FD12498F13631854D /* Pods-TactileSlider_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1250780FFA398CE8F5394959CD4E044 /* Pods-TactileSlider_Example-dummy.m */; };
+		7DB99873437C43DC92EC1820AFF50BAC /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BC372BBAF0B54D1787DE5E367321AD /* TactileSlider+UIPointerInteractionDelegate.swift */; };
+		9D4601CA1FE1D683185B90EC6579EA4B /* Pods-TactileSlider_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1075ADEB69467304258380F693EF6CDC /* Pods-TactileSlider_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A8E5159F5AE3B5A1435F5FC6C5517F5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		AE80CB664A430A3AAB9C19CC83EE07CF /* TactileSlider-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5718287C7EBF1EC5A8B2766392C880CD /* TactileSlider-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B881DE4264205A5A6E035ED41ABA0C49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		D2721AF6B194D223D6A208B0E5B82E89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		D62C49902818A720F4796C50A7B437B1 /* Pods-TactileSlider_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D7FB2CD6421A5CF2280EEF04923763D7 /* Pods-TactileSlider_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4DC9127E163A2A2FB545C7A8E5582DFD /* PBXContainerItemProxy */ = {
+		10138271A59C8EB9CF78840FE6B8BA65 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A0AABF74542E1A420FEDCB29FFA2C0D4;
+			remoteGlobalIDString = 80DEE1020F4A777B4C5B940B77991565;
 			remoteInfo = TactileSlider;
 		};
-		BF48A17899A464B57380B83A84A5AC81 /* PBXContainerItemProxy */ = {
+		AC48EA938292896448CAAA30FCC2688C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 19A572CC78ED773B2A9F51CF6767B229;
+			remoteGlobalIDString = 871DF4CDAFC65BB655C9133B3C78D951;
 			remoteInfo = "Pods-TactileSlider_Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0195F191453DA7CC33E8E05FA5A6448A /* TactileSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TactileSlider-dummy.m"; sourceTree = "<group>"; };
-		09EA4384106F9DB5D874141773CACE09 /* Pods-TactileSlider_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		0C731ACE723917BABAC617B0FC3D2450 /* Pods-TactileSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		187CFB5C159F8FB87B4FDEFDC6F56482 /* Pods-TactileSlider_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1E4700633A5275B325DE444CA0079C17 /* TactileSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TactileSlider.modulemap; sourceTree = "<group>"; };
-		29027E410B8B0A15ECA77F702D6A427C /* Pods-TactileSlider_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Example-frameworks.sh"; sourceTree = "<group>"; };
-		2A29BC6036889BF944B698D93BEB87D2 /* Pods_TactileSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileSlider_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		39261411E54E41146081F391729CA9D5 /* Pods-TactileSlider_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Tests-dummy.m"; sourceTree = "<group>"; };
-		42E143BD556334A3CC19DAE7A8A9494F /* Pods-TactileSlider_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		50804FA8354AC49A846B1076543866FC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		53CB43190D5BA6FD31CC09FC9FE0F578 /* Pods_TactileSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TactileSlider_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5EA66E50BB611674852DEC860E439787 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65610A1B5BABBEE9F711606B8D585B8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		699E64C602234BB35755F92BB690F906 /* TactileSlider.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TactileSlider.xcconfig; sourceTree = "<group>"; };
-		6B41D578485AEEB686AF9E6A076851D2 /* Pods-TactileSlider_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Example.modulemap"; sourceTree = "<group>"; };
-		848E94EC873CA7C63D6D3DF9853BAD5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8BCAFA9DFB54F615F92F897F6D7D6913 /* Pods-TactileSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8F2617B20044FA7CB22B904E892FF03A /* Pods-TactileSlider_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96AF7842CBAF7EA0E240D75EFC9F5171 /* TactileSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TactileSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		96F17113B14287D8CC8506327147BA1C /* Pods-TactileSlider_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Example-resources.sh"; sourceTree = "<group>"; };
-		9F7E237DD13786164C748590CD606E82 /* Pods-TactileSlider_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Tests-umbrella.h"; sourceTree = "<group>"; };
-		AE21AEB64F11672CDD14F56AA062548C /* Pods-TactileSlider_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B2356BB928D289735787C4B91164C234 /* TactileSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-prefix.pch"; sourceTree = "<group>"; };
-		B4578940ED7C57C5FA77CD132A2EBAD0 /* Pods-TactileSlider_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Tests.modulemap"; sourceTree = "<group>"; };
-		BCFFDF40657C27D9AF633D5A85F5F27D /* Pods-TactileSlider_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Tests-resources.sh"; sourceTree = "<group>"; };
-		BFE1A51BEF7ECD1634EA4E2E590ED3B6 /* TactileSliderLayerRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSliderLayerRenderer.swift; path = TactileSlider/Classes/TactileSliderLayerRenderer.swift; sourceTree = "<group>"; };
-		C07801C6F54076629A588DBBE31BC646 /* TactileSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-umbrella.h"; sourceTree = "<group>"; };
-		C3B0503E0532A7B6A67B54F0F0D7394F /* Pods-TactileSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Example-dummy.m"; sourceTree = "<group>"; };
-		E3E795948B8888137A6FAE4E55759715 /* Pods-TactileSlider_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		E413B0039A0E0F4B05C71DD34E0CA4FB /* TactileSlider.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TactileSlider.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TactileSlider+UIPointerInteractionDelegate.swift"; path = "TactileSlider/Classes/TactileSlider+UIPointerInteractionDelegate.swift"; sourceTree = "<group>"; };
-		F74D41FD01A56E075CF50A15DFC67B68 /* Pods-TactileSlider_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Example-umbrella.h"; sourceTree = "<group>"; };
-		FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSlider.swift; path = TactileSlider/Classes/TactileSlider.swift; sourceTree = "<group>"; };
-		FBAA25ADA0FF66EB54B68A9E65A92092 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1075ADEB69467304258380F693EF6CDC /* Pods-TactileSlider_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Tests-umbrella.h"; sourceTree = "<group>"; };
+		2317EB53B535645261350739C5CBDE43 /* Pods-TactileSlider_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		26C8800642A88CD97942A19B2FA5E90A /* Pods-TactileSlider_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Tests-Info.plist"; sourceTree = "<group>"; };
+		33BC372BBAF0B54D1787DE5E367321AD /* TactileSlider+UIPointerInteractionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TactileSlider+UIPointerInteractionDelegate.swift"; path = "TactileSlider/Classes/TactileSlider+UIPointerInteractionDelegate.swift"; sourceTree = "<group>"; };
+		4037797D9C8C796FE293BE11FE021E52 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		420140E596F57B6CB71A6F45694ED41F /* Pods-TactileSlider_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		43DA8BC0D538235F5DE06D271B83C785 /* TactileSlider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TactileSlider.release.xcconfig; sourceTree = "<group>"; };
+		4CF07B91A750E57DC5DCFB77C7AA707B /* Pods-TactileSlider_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Example.modulemap"; sourceTree = "<group>"; };
+		5718287C7EBF1EC5A8B2766392C880CD /* TactileSlider-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-umbrella.h"; sourceTree = "<group>"; };
+		5AED37A66ADD4ED0FA6FC633796CC544 /* TactileSliderLayerRenderer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSliderLayerRenderer.swift; path = TactileSlider/Classes/TactileSliderLayerRenderer.swift; sourceTree = "<group>"; };
+		5E06080D2B1A0F4CC930D0F6135DE58E /* Pods-TactileSlider_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		6B49879D608C1D96E70799B37E705DED /* Pods-TactileSlider_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		6D7613A991207D8DBDC0FDB94D6457E0 /* Pods_TactileSlider_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TactileSlider_Example.framework; path = "Pods-TactileSlider_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FCA3A55DBEC9B7C4BDFA6F7DCE34705 /* TactileSlider-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TactileSlider-dummy.m"; sourceTree = "<group>"; };
+		78614CF719816DBEAF40FE541C0E8B36 /* TactileSlider-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TactileSlider-Info.plist"; sourceTree = "<group>"; };
+		854C14753D9B51C761FF4C5C7B502742 /* TactileSlider-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TactileSlider-prefix.pch"; sourceTree = "<group>"; };
+		8B0839462995779CCC56FB9612A76E64 /* Pods-TactileSlider_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		92C4C6F02C7A264D175930B66680A213 /* Pods-TactileSlider_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TactileSlider_Tests.modulemap"; sourceTree = "<group>"; };
+		962E6E80996A2C4E95A4976C2637C015 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A5EC5BC96DCC828F9FD1A76F0C0D0AD4 /* Pods_TactileSlider_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TactileSlider_Tests.framework; path = "Pods-TactileSlider_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A71F6181E5C732974BC788754FB602DC /* Pods-TactileSlider_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TactileSlider_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B1EF4514EEB06A11CDC4D54DF47E749A /* Pods-TactileSlider_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Tests-dummy.m"; sourceTree = "<group>"; };
+		B361F29B0AD76E15F77738A295E770DC /* Pods-TactileSlider_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TactileSlider_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C198D37682E9D7A8CE6AF0AD3790723E /* Pods-TactileSlider_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D08256CA0A7F933662E4B5149E44DD9B /* TactileSlider.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TactileSlider.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D1250780FFA398CE8F5394959CD4E044 /* Pods-TactileSlider_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TactileSlider_Example-dummy.m"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D7FB2CD6421A5CF2280EEF04923763D7 /* Pods-TactileSlider_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TactileSlider_Example-umbrella.h"; sourceTree = "<group>"; };
+		E4034BF0620B8345DC35E86922842D24 /* Pods-TactileSlider_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TactileSlider_Example-Info.plist"; sourceTree = "<group>"; };
+		E592E6406C054E451A07C560A62C3246 /* TactileSlider.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TactileSlider.modulemap; sourceTree = "<group>"; };
+		E94DC7A89756EC1640B9831205261F0F /* Pods-TactileSlider_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TactileSlider_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EF282BEAD4349BC18A56D8307C9DE7F6 /* TactileSlider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TactileSlider.framework; path = TactileSlider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F024309C32F4E0C9CA3E31F471C0970B /* TactileSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TactileSlider.swift; path = TactileSlider/Classes/TactileSlider.swift; sourceTree = "<group>"; };
+		F778F24166502DCBDA967E8B79944C23 /* TactileSlider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TactileSlider.debug.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4787995A350C20BBE40F2052A2BA1B59 /* Frameworks */ = {
+		0BD94D6855736DCDE1591FB4247B0DDB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E8913E597895F4215AE50C4355ABD7B /* Foundation.framework in Frameworks */,
+				463606B606CEC4E6C6659849899638E4 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5054947723ABC2552D2D2F235C8328A4 /* Frameworks */ = {
+		1F8A541FF355D590CBB8B4E5D7E457D5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B841130550B404F0DDB33730669F0D84 /* Foundation.framework in Frameworks */,
+				B881DE4264205A5A6E035ED41ABA0C49 /* Foundation.framework in Frameworks */,
+				D2721AF6B194D223D6A208B0E5B82E89 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1C56D7FFD2028D55173B8677E12BBD9 /* Frameworks */ = {
+		78E8B0582BF733146307661A827C45F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D22590740845F9B82469126414721B8 /* Foundation.framework in Frameworks */,
+				A8E5159F5AE3B5A1435F5FC6C5517F5C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		036258E23CF4EBB604A0E358275E117A /* Support Files */ = {
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FBAA25ADA0FF66EB54B68A9E65A92092 /* Info.plist */,
-				1E4700633A5275B325DE444CA0079C17 /* TactileSlider.modulemap */,
-				699E64C602234BB35755F92BB690F906 /* TactileSlider.xcconfig */,
-				0195F191453DA7CC33E8E05FA5A6448A /* TactileSlider-dummy.m */,
-				B2356BB928D289735787C4B91164C234 /* TactileSlider-prefix.pch */,
-				C07801C6F54076629A588DBBE31BC646 /* TactileSlider-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TactileSlider";
-			sourceTree = "<group>";
-		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4C26490FDA8F0ABEDFABAE2835920D97 /* TactileSlider */ = {
-			isa = PBXGroup;
-			children = (
-				FAAEDFADD3E12F366AD0BCA6B8EF87EB /* TactileSlider.swift */,
-				E9941CAD245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift */,
-				BFE1A51BEF7ECD1634EA4E2E590ED3B6 /* TactileSliderLayerRenderer.swift */,
-				6095C34B06EA75BF182DCEF2EFA7BFD9 /* Pod */,
-				036258E23CF4EBB604A0E358275E117A /* Support Files */,
-			);
-			name = TactileSlider;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		6095C34B06EA75BF182DCEF2EFA7BFD9 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				65610A1B5BABBEE9F711606B8D585B8B /* LICENSE */,
-				50804FA8354AC49A846B1076543866FC /* README.md */,
-				E413B0039A0E0F4B05C71DD34E0CA4FB /* TactileSlider.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		7ACC10C6F84327D1A14AAC57F6D50ECD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2A29BC6036889BF944B698D93BEB87D2 /* Pods_TactileSlider_Example.framework */,
-				53CB43190D5BA6FD31CC09FC9FE0F578 /* Pods_TactileSlider_Tests.framework */,
-				96AF7842CBAF7EA0E240D75EFC9F5171 /* TactileSlider.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				E131DCB4A1CC0C9AAE2E67D4A0A33D23 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				7ACC10C6F84327D1A14AAC57F6D50ECD /* Products */,
-				A192376EAFEE5A798BEF6A97A35FC75A /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		A192376EAFEE5A798BEF6A97A35FC75A /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				FCB14CCE1F8860AF711585D419B5C26B /* Pods-TactileSlider_Example */,
-				AC5A29A4EB0BF96A3C4C1676F7311DD6 /* Pods-TactileSlider_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		AC5A29A4EB0BF96A3C4C1676F7311DD6 /* Pods-TactileSlider_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				5EA66E50BB611674852DEC860E439787 /* Info.plist */,
-				B4578940ED7C57C5FA77CD132A2EBAD0 /* Pods-TactileSlider_Tests.modulemap */,
-				8F2617B20044FA7CB22B904E892FF03A /* Pods-TactileSlider_Tests-acknowledgements.markdown */,
-				187CFB5C159F8FB87B4FDEFDC6F56482 /* Pods-TactileSlider_Tests-acknowledgements.plist */,
-				39261411E54E41146081F391729CA9D5 /* Pods-TactileSlider_Tests-dummy.m */,
-				E3E795948B8888137A6FAE4E55759715 /* Pods-TactileSlider_Tests-frameworks.sh */,
-				BCFFDF40657C27D9AF633D5A85F5F27D /* Pods-TactileSlider_Tests-resources.sh */,
-				9F7E237DD13786164C748590CD606E82 /* Pods-TactileSlider_Tests-umbrella.h */,
-				09EA4384106F9DB5D874141773CACE09 /* Pods-TactileSlider_Tests.debug.xcconfig */,
-				0C731ACE723917BABAC617B0FC3D2450 /* Pods-TactileSlider_Tests.release.xcconfig */,
-			);
-			name = "Pods-TactileSlider_Tests";
-			path = "Target Support Files/Pods-TactileSlider_Tests";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E131DCB4A1CC0C9AAE2E67D4A0A33D23 /* Development Pods */ = {
+		19775FE46110A943B11489911988853C /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C26490FDA8F0ABEDFABAE2835920D97 /* TactileSlider */,
+				E872E88F1128EF4D9F17AA582F68643B /* TactileSlider */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		FCB14CCE1F8860AF711585D419B5C26B /* Pods-TactileSlider_Example */ = {
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				848E94EC873CA7C63D6D3DF9853BAD5F /* Info.plist */,
-				6B41D578485AEEB686AF9E6A076851D2 /* Pods-TactileSlider_Example.modulemap */,
-				AE21AEB64F11672CDD14F56AA062548C /* Pods-TactileSlider_Example-acknowledgements.markdown */,
-				42E143BD556334A3CC19DAE7A8A9494F /* Pods-TactileSlider_Example-acknowledgements.plist */,
-				E071CEA64AEA8DE6FFB5E7EB7F6B1A96 /* Pods-TactileSlider_Example-dummy.m */,
-				29027E410B8B0A15ECA77F702D6A427C /* Pods-TactileSlider_Example-frameworks.sh */,
-				96F17113B14287D8CC8506327147BA1C /* Pods-TactileSlider_Example-resources.sh */,
-				F74D41FD01A56E075CF50A15DFC67B68 /* Pods-TactileSlider_Example-umbrella.h */,
-				8BCAFA9DFB54F615F92F897F6D7D6913 /* Pods-TactileSlider_Example.debug.xcconfig */,
-				C3B0503E0532A7B6A67B54F0F0D7394F /* Pods-TactileSlider_Example.release.xcconfig */,
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		61A4479388AEE8DACA90B1AB48F7CF41 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8B19A7D20D03E9776B56C5643AB502F5 /* Pods-TactileSlider_Example */,
+				A6C783978C0174D2750B9E049DBAA755 /* Pods-TactileSlider_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6710CF9E1BBE287FA368F113C10BC22B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				962E6E80996A2C4E95A4976C2637C015 /* LICENSE */,
+				4037797D9C8C796FE293BE11FE021E52 /* README.md */,
+				D08256CA0A7F933662E4B5149E44DD9B /* TactileSlider.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		8B19A7D20D03E9776B56C5643AB502F5 /* Pods-TactileSlider_Example */ = {
+			isa = PBXGroup;
+			children = (
+				4CF07B91A750E57DC5DCFB77C7AA707B /* Pods-TactileSlider_Example.modulemap */,
+				8B0839462995779CCC56FB9612A76E64 /* Pods-TactileSlider_Example-acknowledgements.markdown */,
+				5E06080D2B1A0F4CC930D0F6135DE58E /* Pods-TactileSlider_Example-acknowledgements.plist */,
+				D1250780FFA398CE8F5394959CD4E044 /* Pods-TactileSlider_Example-dummy.m */,
+				B361F29B0AD76E15F77738A295E770DC /* Pods-TactileSlider_Example-frameworks.sh */,
+				E4034BF0620B8345DC35E86922842D24 /* Pods-TactileSlider_Example-Info.plist */,
+				D7FB2CD6421A5CF2280EEF04923763D7 /* Pods-TactileSlider_Example-umbrella.h */,
+				C198D37682E9D7A8CE6AF0AD3790723E /* Pods-TactileSlider_Example.debug.xcconfig */,
+				E94DC7A89756EC1640B9831205261F0F /* Pods-TactileSlider_Example.release.xcconfig */,
 			);
 			name = "Pods-TactileSlider_Example";
 			path = "Target Support Files/Pods-TactileSlider_Example";
 			sourceTree = "<group>";
 		};
+		A6C783978C0174D2750B9E049DBAA755 /* Pods-TactileSlider_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				92C4C6F02C7A264D175930B66680A213 /* Pods-TactileSlider_Tests.modulemap */,
+				A71F6181E5C732974BC788754FB602DC /* Pods-TactileSlider_Tests-acknowledgements.markdown */,
+				6B49879D608C1D96E70799B37E705DED /* Pods-TactileSlider_Tests-acknowledgements.plist */,
+				B1EF4514EEB06A11CDC4D54DF47E749A /* Pods-TactileSlider_Tests-dummy.m */,
+				26C8800642A88CD97942A19B2FA5E90A /* Pods-TactileSlider_Tests-Info.plist */,
+				1075ADEB69467304258380F693EF6CDC /* Pods-TactileSlider_Tests-umbrella.h */,
+				2317EB53B535645261350739C5CBDE43 /* Pods-TactileSlider_Tests.debug.xcconfig */,
+				420140E596F57B6CB71A6F45694ED41F /* Pods-TactileSlider_Tests.release.xcconfig */,
+			);
+			name = "Pods-TactileSlider_Tests";
+			path = "Target Support Files/Pods-TactileSlider_Tests";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				19775FE46110A943B11489911988853C /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				E1E5B9E25E26B942C88549BF55091AF0 /* Products */,
+				61A4479388AEE8DACA90B1AB48F7CF41 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D374A5C5A7840CFE9F608FCB25DE0106 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E592E6406C054E451A07C560A62C3246 /* TactileSlider.modulemap */,
+				6FCA3A55DBEC9B7C4BDFA6F7DCE34705 /* TactileSlider-dummy.m */,
+				78614CF719816DBEAF40FE541C0E8B36 /* TactileSlider-Info.plist */,
+				854C14753D9B51C761FF4C5C7B502742 /* TactileSlider-prefix.pch */,
+				5718287C7EBF1EC5A8B2766392C880CD /* TactileSlider-umbrella.h */,
+				F778F24166502DCBDA967E8B79944C23 /* TactileSlider.debug.xcconfig */,
+				43DA8BC0D538235F5DE06D271B83C785 /* TactileSlider.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TactileSlider";
+			sourceTree = "<group>";
+		};
+		E1E5B9E25E26B942C88549BF55091AF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D7613A991207D8DBDC0FDB94D6457E0 /* Pods_TactileSlider_Example.framework */,
+				A5EC5BC96DCC828F9FD1A76F0C0D0AD4 /* Pods_TactileSlider_Tests.framework */,
+				EF282BEAD4349BC18A56D8307C9DE7F6 /* TactileSlider.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E872E88F1128EF4D9F17AA582F68643B /* TactileSlider */ = {
+			isa = PBXGroup;
+			children = (
+				F024309C32F4E0C9CA3E31F471C0970B /* TactileSlider.swift */,
+				33BC372BBAF0B54D1787DE5E367321AD /* TactileSlider+UIPointerInteractionDelegate.swift */,
+				5AED37A66ADD4ED0FA6FC633796CC544 /* TactileSliderLayerRenderer.swift */,
+				6710CF9E1BBE287FA368F113C10BC22B /* Pod */,
+				D374A5C5A7840CFE9F608FCB25DE0106 /* Support Files */,
+			);
+			name = TactileSlider;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7937E3A4F960F2584CBB4EB8A19B0AC6 /* Headers */ = {
+		2E5D691344E868C7FDF68AB7A4ABD7A5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0448A6F6DEC26F75414DA05878EDB643 /* TactileSlider-umbrella.h in Headers */,
+				AE80CB664A430A3AAB9C19CC83EE07CF /* TactileSlider-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAFD044AD4A302E1F58187B57E4EE8E9 /* Headers */ = {
+		C1C818E296D4E124802544490D92A82F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				775FB9F7D6A12B23DA7B06ABCD65D7AD /* Pods-TactileSlider_Tests-umbrella.h in Headers */,
+				9D4601CA1FE1D683185B90EC6579EA4B /* Pods-TactileSlider_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4E114FA7F77358D653414AAA116E37F /* Headers */ = {
+		F9F5364AB777FAC960395E7BAE13EBB2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FEBB5E1F03594A45E626CCD322D8685 /* Pods-TactileSlider_Example-umbrella.h in Headers */,
+				D62C49902818A720F4796C50A7B437B1 /* Pods-TactileSlider_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		19A572CC78ED773B2A9F51CF6767B229 /* Pods-TactileSlider_Example */ = {
+		80DEE1020F4A777B4C5B940B77991565 /* TactileSlider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1DFF6299299DD19A1508D307B41A88B /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Example" */;
+			buildConfigurationList = 06805691B731FEC189022D9DFC63F559 /* Build configuration list for PBXNativeTarget "TactileSlider" */;
 			buildPhases = (
-				B4E114FA7F77358D653414AAA116E37F /* Headers */,
-				060FDA06317F8850C2A949AE03398E3F /* Sources */,
-				5054947723ABC2552D2D2F235C8328A4 /* Frameworks */,
-				36DDAEA4874C45210A4116B5632515C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				93BC3484F457155E0946FD0790DCB7A1 /* PBXTargetDependency */,
-			);
-			name = "Pods-TactileSlider_Example";
-			productName = "Pods-TactileSlider_Example";
-			productReference = 2A29BC6036889BF944B698D93BEB87D2 /* Pods_TactileSlider_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A0AABF74542E1A420FEDCB29FFA2C0D4 /* TactileSlider */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D109988C6FFA2DA1F79A0790DED5E9E1 /* Build configuration list for PBXNativeTarget "TactileSlider" */;
-			buildPhases = (
-				7937E3A4F960F2584CBB4EB8A19B0AC6 /* Headers */,
-				1229774C1F3DE9F47E3AEA7A34278EA1 /* Sources */,
-				A1C56D7FFD2028D55173B8677E12BBD9 /* Frameworks */,
-				A0AC6635E5F9053BA49C1907F22A09AF /* Resources */,
+				2E5D691344E868C7FDF68AB7A4ABD7A5 /* Headers */,
+				2ACA4855AA529EE4C7FD4498D2917413 /* Sources */,
+				1F8A541FF355D590CBB8B4E5D7E457D5 /* Frameworks */,
+				888D14F477AAE7F3FCCE5F6CCDC1B18D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -297,81 +278,92 @@
 			);
 			name = TactileSlider;
 			productName = TactileSlider;
-			productReference = 96AF7842CBAF7EA0E240D75EFC9F5171 /* TactileSlider.framework */;
+			productReference = EF282BEAD4349BC18A56D8307C9DE7F6 /* TactileSlider.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F80616D70FCFF289D44EEF7075642AB7 /* Pods-TactileSlider_Tests */ = {
+		871DF4CDAFC65BB655C9133B3C78D951 /* Pods-TactileSlider_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A57D8363801C764BC8E12F72CC48FCDF /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Tests" */;
+			buildConfigurationList = 42ECE660A60BF2E78677298F7E64EAFE /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Example" */;
 			buildPhases = (
-				AAFD044AD4A302E1F58187B57E4EE8E9 /* Headers */,
-				D54ED1D2445A3C6846181318A6F5F752 /* Sources */,
-				4787995A350C20BBE40F2052A2BA1B59 /* Frameworks */,
-				FB8EBED12A9791D5E28F66F73E1D5202 /* Resources */,
+				F9F5364AB777FAC960395E7BAE13EBB2 /* Headers */,
+				9B802730DFC83C9478D1494D25369503 /* Sources */,
+				78E8B0582BF733146307661A827C45F4 /* Frameworks */,
+				44462DAB91B5AA38CEAF1B20185DE407 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6170F3FCF142230CC1D305B1886736EB /* PBXTargetDependency */,
+				81FBFBAB6B00C0589EC5F1532DDEF8B6 /* PBXTargetDependency */,
+			);
+			name = "Pods-TactileSlider_Example";
+			productName = "Pods-TactileSlider_Example";
+			productReference = 6D7613A991207D8DBDC0FDB94D6457E0 /* Pods_TactileSlider_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F09B28709C1CFD0FBB239A99DF29FCA7 /* Pods-TactileSlider_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3FD9F28885784BC8FF1802820E5C0DC3 /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Tests" */;
+			buildPhases = (
+				C1C818E296D4E124802544490D92A82F /* Headers */,
+				1783145A03F996612F76D4E7BFA60500 /* Sources */,
+				0BD94D6855736DCDE1591FB4247B0DDB /* Frameworks */,
+				6F3A497BFD0BA2C9E4ABC268FBF6CDE7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB47817539791E76BDA404BBC9F9D321 /* PBXTargetDependency */,
 			);
 			name = "Pods-TactileSlider_Tests";
 			productName = "Pods-TactileSlider_Tests";
-			productReference = 53CB43190D5BA6FD31CC09FC9FE0F578 /* Pods_TactileSlider_Tests.framework */;
+			productReference = A5EC5BC96DCC828F9FD1A76F0C0D0AD4 /* Pods_TactileSlider_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1140;
-				TargetAttributes = {
-					19A572CC78ED773B2A9F51CF6767B229 = {
-						LastSwiftMigration = 1140;
-					};
-					A0AABF74542E1A420FEDCB29FFA2C0D4 = {
-						LastSwiftMigration = 1140;
-					};
-				};
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7ACC10C6F84327D1A14AAC57F6D50ECD /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = E1E5B9E25E26B942C88549BF55091AF0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19A572CC78ED773B2A9F51CF6767B229 /* Pods-TactileSlider_Example */,
-				F80616D70FCFF289D44EEF7075642AB7 /* Pods-TactileSlider_Tests */,
-				A0AABF74542E1A420FEDCB29FFA2C0D4 /* TactileSlider */,
+				871DF4CDAFC65BB655C9133B3C78D951 /* Pods-TactileSlider_Example */,
+				F09B28709C1CFD0FBB239A99DF29FCA7 /* Pods-TactileSlider_Tests */,
+				80DEE1020F4A777B4C5B940B77991565 /* TactileSlider */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		36DDAEA4874C45210A4116B5632515C6 /* Resources */ = {
+		44462DAB91B5AA38CEAF1B20185DE407 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0AC6635E5F9053BA49C1907F22A09AF /* Resources */ = {
+		6F3A497BFD0BA2C9E4ABC268FBF6CDE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB8EBED12A9791D5E28F66F73E1D5202 /* Resources */ = {
+		888D14F477AAE7F3FCCE5F6CCDC1B18D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,153 +373,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		060FDA06317F8850C2A949AE03398E3F /* Sources */ = {
+		1783145A03F996612F76D4E7BFA60500 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F62C3B169D7F16E98632F2C7B6B0101 /* Pods-TactileSlider_Example-dummy.m in Sources */,
+				6FAB0B43B1B18385CC1AE7AEEDF0B4C4 /* Pods-TactileSlider_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1229774C1F3DE9F47E3AEA7A34278EA1 /* Sources */ = {
+		2ACA4855AA529EE4C7FD4498D2917413 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07213C573515BE4E884E2B6442061364 /* TactileSlider-dummy.m in Sources */,
-				E9941CAE245CEC4200EDFE36 /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */,
-				ED20AFD6A38250EC237C8C1C7326F68D /* TactileSlider.swift in Sources */,
-				75F827CA44D9C26B5BD55809769C9B4B /* TactileSliderLayerRenderer.swift in Sources */,
+				7DB99873437C43DC92EC1820AFF50BAC /* TactileSlider+UIPointerInteractionDelegate.swift in Sources */,
+				3D1539B186D61B08E1FF98AC4A7C2454 /* TactileSlider-dummy.m in Sources */,
+				42AB11D9D0672C4086779CA16C905F9E /* TactileSlider.swift in Sources */,
+				1F91CA17619D066EC3A514C13760EC1A /* TactileSliderLayerRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D54ED1D2445A3C6846181318A6F5F752 /* Sources */ = {
+		9B802730DFC83C9478D1494D25369503 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3192AD886BCF99BC8A9E2929A440301D /* Pods-TactileSlider_Tests-dummy.m in Sources */,
+				794FC712BCE6582FD12498F13631854D /* Pods-TactileSlider_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6170F3FCF142230CC1D305B1886736EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-TactileSlider_Example";
-			target = 19A572CC78ED773B2A9F51CF6767B229 /* Pods-TactileSlider_Example */;
-			targetProxy = BF48A17899A464B57380B83A84A5AC81 /* PBXContainerItemProxy */;
-		};
-		93BC3484F457155E0946FD0790DCB7A1 /* PBXTargetDependency */ = {
+		81FBFBAB6B00C0589EC5F1532DDEF8B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TactileSlider;
-			target = A0AABF74542E1A420FEDCB29FFA2C0D4 /* TactileSlider */;
-			targetProxy = 4DC9127E163A2A2FB545C7A8E5582DFD /* PBXContainerItemProxy */;
+			target = 80DEE1020F4A777B4C5B940B77991565 /* TactileSlider */;
+			targetProxy = 10138271A59C8EB9CF78840FE6B8BA65 /* PBXContainerItemProxy */;
+		};
+		CB47817539791E76BDA404BBC9F9D321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-TactileSlider_Example";
+			target = 871DF4CDAFC65BB655C9133B3C78D951 /* Pods-TactileSlider_Example */;
+			targetProxy = AC48EA938292896448CAAA30FCC2688C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1BBD6C0421000BC3C71C2A28CA627ED9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 699E64C602234BB35755F92BB690F906 /* TactileSlider.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TactileSlider/TactileSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TactileSlider/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TactileSlider/TactileSlider.modulemap";
-				PRODUCT_MODULE_NAME = TactileSlider;
-				PRODUCT_NAME = TactileSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1BFD6345A51F6A9EFB3E65F7BA793960 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0C731ACE723917BABAC617B0FC3D2450 /* Pods-TactileSlider_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Tests/Pods-TactileSlider_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3F7E42794EA06E2FBFC346C7B2BE1B89 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BCAFA9DFB54F615F92F897F6D7D6913 /* Pods-TactileSlider_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Example/Pods-TactileSlider_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		85B95B1234E227C814CCC2C7902D0916 /* Release */ = {
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -554,108 +445,13 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		A3F7BA55B124644C5E168E8FCC8ABF38 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 699E64C602234BB35755F92BB690F906 /* TactileSlider.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TactileSlider/TactileSlider-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TactileSlider/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TactileSlider/TactileSlider.modulemap";
-				PRODUCT_MODULE_NAME = TactileSlider;
-				PRODUCT_NAME = TactileSlider;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A73625DEBD810B78234FA1958C191C8C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -675,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -683,18 +479,15 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		C23488C0C35959BDEF7A4A872B372110 /* Release */ = {
+		57C2247D2F1B3C0AB074496AA2962887 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C3B0503E0532A7B6A67B54F0F0D7394F /* Pods-TactileSlider_Example.release.xcconfig */;
+			baseConfigurationReference = 43DA8BC0D538235F5DE06D271B83C785 /* TactileSlider.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -703,9 +496,41 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Example/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/TactileSlider/TactileSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TactileSlider/TactileSlider-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TactileSlider/TactileSlider.modulemap";
+				PRODUCT_MODULE_NAME = TactileSlider;
+				PRODUCT_NAME = TactileSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		58D3455588D2915B1A3EBE81177A6FF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C198D37682E9D7A8CE6AF0AD3790723E /* Pods-TactileSlider_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Example/Pods-TactileSlider_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Example/Pods-TactileSlider_Example.modulemap";
@@ -716,20 +541,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		CEFF98C019CA93DD39467C1EA9748D04 /* Debug */ = {
+		67B9568BF5C2CED1D86553B9D7B20886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09EA4384106F9DB5D874141773CACE09 /* Pods-TactileSlider_Tests.debug.xcconfig */;
+			baseConfigurationReference = 420140E596F57B6CB71A6F45694ED41F /* Pods-TactileSlider_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -738,9 +560,75 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Tests/Pods-TactileSlider_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Tests/Pods-TactileSlider_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A68383C1E5DBC4DFEFFFC0EBF69FF03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94DC7A89756EC1640B9831205261F0F /* Pods-TactileSlider_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Example/Pods-TactileSlider_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Example/Pods-TactileSlider_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B24B87E92DD451503AC78F2DDDEB1B47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2317EB53B535645261350739C5CBDE43 /* Pods-TactileSlider_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TactileSlider_Tests/Pods-TactileSlider_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-TactileSlider_Tests/Pods-TactileSlider_Tests.modulemap";
@@ -757,46 +645,138 @@
 			};
 			name = Debug;
 		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		E2DF0EC73DA463B28668E5CBD28E83F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F778F24166502DCBDA967E8B79944C23 /* TactileSlider.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TactileSlider/TactileSlider-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TactileSlider/TactileSlider-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TactileSlider/TactileSlider.modulemap";
+				PRODUCT_MODULE_NAME = TactileSlider;
+				PRODUCT_NAME = TactileSlider;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		06805691B731FEC189022D9DFC63F559 /* Build configuration list for PBXNativeTarget "TactileSlider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A73625DEBD810B78234FA1958C191C8C /* Debug */,
-				85B95B1234E227C814CCC2C7902D0916 /* Release */,
+				E2DF0EC73DA463B28668E5CBD28E83F2 /* Debug */,
+				57C2247D2F1B3C0AB074496AA2962887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A57D8363801C764BC8E12F72CC48FCDF /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Tests" */ = {
+		3FD9F28885784BC8FF1802820E5C0DC3 /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CEFF98C019CA93DD39467C1EA9748D04 /* Debug */,
-				1BFD6345A51F6A9EFB3E65F7BA793960 /* Release */,
+				B24B87E92DD451503AC78F2DDDEB1B47 /* Debug */,
+				67B9568BF5C2CED1D86553B9D7B20886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1DFF6299299DD19A1508D307B41A88B /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Example" */ = {
+		42ECE660A60BF2E78677298F7E64EAFE /* Build configuration list for PBXNativeTarget "Pods-TactileSlider_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3F7E42794EA06E2FBFC346C7B2BE1B89 /* Debug */,
-				C23488C0C35959BDEF7A4A872B372110 /* Release */,
+				58D3455588D2915B1A3EBE81177A6FF1 /* Debug */,
+				A68383C1E5DBC4DFEFFFC0EBF69FF03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D109988C6FFA2DA1F79A0790DED5E9E1 /* Build configuration list for PBXNativeTarget "TactileSlider" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1BBD6C0421000BC3C71C2A28CA627ED9 /* Debug */,
-				A3F7BA55B124644C5E168E8FCC8ABF38 /* Release */,
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
