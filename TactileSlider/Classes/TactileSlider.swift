@@ -298,13 +298,13 @@ import UIKit
 	override open func accessibilityDecrement() {
 		value -= (maximum - minimum) / 10
 		renderer.setValue(value, animated: true)
-		sendActions(for: .valueChanged)
+		sendActions(for: [.valueChanged, .primaryActionTriggered])
 	}
 	
 	override open func accessibilityIncrement() {
 		value += (maximum - minimum) / 10
 		renderer.setValue(value, animated: true)
-		sendActions(for: .valueChanged)
+		sendActions(for: [.valueChanged, .primaryActionTriggered])
 	}
 	
 	/// Returns a string containing the value of the slider as a percentage
@@ -382,7 +382,7 @@ import UIKit
 		}
 		
 		if isContinuous || sender.state == .ended || sender.state == .cancelled {
-			sendActions(for: .valueChanged)
+			sendActions(for: [.valueChanged, .primaryActionTriggered])
 		}
 		
 		if sender.state != .ended && sender.state != .cancelled && sender.state != .failed {
@@ -403,7 +403,7 @@ import UIKit
 			}
 			let tappedValue = valueForPosition(tapLocation)
 			setValue(tappedValue, animated: true)
-			sendActions(for: .valueChanged)
+			sendActions(for: [.valueChanged, .primaryActionTriggered])
 		}
 	}
 	
