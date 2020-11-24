@@ -95,9 +95,7 @@ import UIKit
 	///
 	/// If `enableTapping` is `true`, this can be used to filter direct (e.g. finger) or indirect (e.g. trackpad) touches.
 	///
-	/// - Requires: iOS 9
 	/// - Requires: `enableTapping == true`, otherwise no effect
-	@available(iOS 9.0, *)
 	open var allowedTapTypes: [NSNumber] {
 		get {
 			return tapGestureRecognizer.allowedTouchTypes
