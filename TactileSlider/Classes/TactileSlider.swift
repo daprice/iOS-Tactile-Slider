@@ -73,6 +73,17 @@ import UIKit
 		}
 	}
 	
+	/// Size, in screen points, of the area in which the user's drags will be treated as if they are shorter, in order to make precise changes easier
+	///
+	/// This is intended for use cases where the user might want to adjust the value of the slider by very small, precise amounts. If `precisionRampUpDistance` is non-zero, the sensitivity for pan gestures will start out lower (i.e. higher precision; the value will change by less than the user moved their finger) and ramp up until the user has moved their finger by this distance, after which the precision will be 1:1.
+	///
+	/// - Note: A value no larger than 5 to 10 points (or 10% of the length of the slider, whichever is smaller) is recommended.
+	///
+	/// Setting this to `0` results in the same behavior as UISlider, where the value change exactly matches the user's finger movement.
+	///
+	/// - Warning: If this is larger than the size of the slider's bounds, it will be very difficult to make large adjustments to the slider's value.
+	@IBInspectable open var precisionRampUpDistance: Float = 0
+	
 	/// If true, will send `valueChanged` actions at every point during a movement of the slider; if false, will only send when the user lifts their finger
 	///
 	/// - Important: Because `TactileSlider` is designed to represent the direct manipulation of a value by the user, setting `isContinuous` to `false` could lead to suboptimal user experience – the user may expect to be able to watch the value change in real time while manipulating the slider, not only when lifting their finger. Only set `isContinuous` to `false` when absolutely necessary.
@@ -204,6 +215,9 @@ import UIKit
 	
 	private var dragGestureRecognizer: UIPanGestureRecognizer!
 	private var tapGestureRecognizer: UITapGestureRecognizer!
+	
+	/// cumulative length of active pan gesture(s)
+	private var accumulatedMovement: CGFloat = 0
 	
 	// gross workaround for not being able to use @available on stored properties, from https://www.klundberg.com/blog/Swift-2-and-@available-properties/
 	private var _minMaxFeedbackGenerator: AnyObject?
@@ -339,8 +353,12 @@ import UIKit
 	}
 	
 	@objc func didPan(sender: UIPanGestureRecognizer) {
-		let translation = sender.translation(in: self)
-		let requestedValueChange = valueChangeForTranslation(translation)
+		let translationLengthAlongValueAxis = valueAxisFrom(sender.translation(in: self))
+		
+		accumulatedMovement += translationLengthAlongValueAxis
+		
+		let adjustedTranslationLength = adjustForPrecision(precisionRampUpDistance, incrementLength: translationLengthAlongValueAxis, totalLength: accumulatedMovement)
+		let requestedValueChange = valueChangeForTranslation(length: adjustedTranslationLength)
 		
 		if value == minimum && requestedValueChange < 0 {
 			// already hit minimum, don't change the value
@@ -387,6 +405,7 @@ import UIKit
 			renderer.popUp = scaleUpWhenInUse
 		} else {
 			renderer.popUp = false
+			accumulatedMovement = 0
 		}
 	}
 	
@@ -490,8 +509,16 @@ import UIKit
 		}
 	}
 	
-	func valueChangeForTranslation(_ translation: CGPoint) -> Float {
-		let translationSizeAlongValueAxis = valueAxisFrom(translation)
+	func adjustForPrecision(_ rampUpDistance: Float, incrementLength: CGFloat, totalLength: CGFloat) -> CGFloat {
+		if totalLength.magnitude < CGFloat(rampUpDistance) {
+			let adjustmentRatio = totalLength.magnitude / CGFloat(rampUpDistance)
+			return incrementLength * adjustmentRatio
+		} else {
+			return incrementLength
+		}
+	}
+	
+	func valueChangeForTranslation(length translationSizeAlongValueAxis: CGFloat) -> Float {
 		let boundsSize = CGPoint(x: bounds.width, y: bounds.height)
 		let boundsSizeAlongValueAxis = valueAxisFrom(boundsSize, accountForDirection: false)
 		return Float(translationSizeAlongValueAxis / boundsSizeAlongValueAxis) * (maximum - minimum)
