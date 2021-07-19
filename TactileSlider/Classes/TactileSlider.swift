@@ -20,7 +20,7 @@ import UIKit
 	
 	/// If true, the slider will move in the vertical direction; if false, horizontal.
 	///
-	/// - Note: You are responsible for setting dimensions/layout constraints on the control in a way that makes sense for the orientation you set.
+	/// - Note: Ensure that the dimensions/layout constraints on the control make sense for the orientation set here.
 	///
 	/// - SeeAlso: `reverseValueAxis`
 	@IBInspectable open var vertical: Bool = false {
