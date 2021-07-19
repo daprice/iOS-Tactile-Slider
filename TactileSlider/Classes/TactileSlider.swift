@@ -348,7 +348,7 @@ import UIKit
 			// already hit maximum, don't change the value
 		} else {
 			let newValue = value + requestedValueChange
-			setValue(newValue, animated: false)
+			setValue(newValue, animated: false) // `setValue` clamps the actual value between min and max
 			
 			// control feedback generator according to state
 			if #available(iOS 10.0, *) {
@@ -357,7 +357,7 @@ import UIKit
 					minMaxFeedbackGenerator = UIImpactFeedbackGenerator(style: feedbackStyle)
 					minMaxFeedbackGenerator?.prepare()
 				case .changed:
-					if newValue != value {
+					if newValue != value { // if the requested value is outside min...max, these won't be equal
 						minMaxFeedbackGenerator?.impactOccurred()
 						minMaxFeedbackGenerator?.prepare()
 					}
