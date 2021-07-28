@@ -9,6 +9,8 @@ import UIKit
 
 internal class TactileSliderLayerRenderer {
 	
+	private static var valueChangeTimingFunction = CAMediaTimingFunction(name: .default)
+	
 	weak var tactileSlider: TactileSlider?
 	
 	var trackBackground: UIColor = .darkGray {
@@ -83,15 +85,12 @@ internal class TactileSliderLayerRenderer {
 	
 	private func updatePopUp() {
 		CATransaction.begin()
-		CATransaction.setDisableActions(true)
+		
+		CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: .easeOut))
+		CATransaction.setAnimationDuration(0.1)
 		
 		let zPosition: CGFloat = popUp ? 1.025 : 1
 		trackLayer.transform = CATransform3DScale(CATransform3DIdentity, zPosition, zPosition, zPosition)
-		
-		let animation = CABasicAnimation(keyPath: "transform.scale")
-		animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
-		animation.duration = 0.1
-		trackLayer.add(animation, forKey: nil)
 		
 		CATransaction.commit()
 	}
@@ -120,7 +119,12 @@ internal class TactileSliderLayerRenderer {
 	
 	internal func setValue(_ value: Float, animated: Bool = false) {
 		CATransaction.begin()
-		CATransaction.setDisableActions(true)
+		
+		if animated {
+			CATransaction.setAnimationTimingFunction(Self.valueChangeTimingFunction)
+		} else {
+			CATransaction.setDisableActions(true)
+		}
 		
 		let valueAxisOffset = tactileSlider!.valueAxisFrom(CGPoint(x: thumbLayer.bounds.width, y: thumbLayer.bounds.height), accountForDirection: true)
 		let valueAxisAmount = tactileSlider!.positionForValue(value)
@@ -128,13 +132,6 @@ internal class TactileSliderLayerRenderer {
 		let position = tactileSlider!.pointOnSlider(valueAxisPosition: valueAxisAmount - (reverseOffset ? 0 : valueAxisOffset), offAxisPosition: 0)
 		
 		thumbLayer.transform = CATransform3DTranslate(CATransform3DIdentity, position.x, position.y, 0)
-		
-		if animated {
-			let animationAxis = tactileSlider!.vertical ? "y" : "x"
-			let animation = CABasicAnimation(keyPath: "transform.translation.\(animationAxis)")
-			animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.default)
-			thumbLayer.add(animation, forKey: nil)
-		}
 		
 		CATransaction.commit()
 	}
