@@ -7,6 +7,25 @@
 
 import UIKit
 
+/// Describes how a stepper-like object should step through a range of floating point values
+public enum SteppingMode<Number> where Number:BinaryFloatingPoint {
+	/// Specifies a percentage to increment/decrement by relative to the size of the range of possible values
+	case percentage(Number)
+	
+	/// Specifies an absolute value to increment/decrement by
+	case stepValue(Number)
+	
+	public func stepSize(in range: ClosedRange<Number>) -> Number {
+		let rangeSize = range.upperBound - range.lowerBound
+		switch self {
+		case .percentage(let percentage):
+			return rangeSize * (percentage/100)
+		case .stepValue(let value):
+			return value
+		}
+	}
+}
+
 @IBDesignable open class TactileSlider: UIControl {
 	
 	private enum Direction {
@@ -72,6 +91,13 @@ import UIKit
 			}
 		}
 	}
+	
+	/// Specifies how the value should be incremented/decremented when it is appropriate to do so, e.g. when VoiceOver users swipe up/down and `accessibilityIncrement` or `accessibilityDecrement` is called
+	///
+	/// - Note: The default stepping mode, `.percentage(10)`, matches the behavior of `UISlider`.
+	///
+	/// - Warning: If `.stepValue` is specified with a value greater than the difference between `minimum` and `maximum`, all incremental adjustments will be limited to only the minimum or maximum value.
+	open var steppingMode: SteppingMode<Float> = .percentage(10)
 	
 	/// Size, in screen points, of the area in which the user's drags will be treated as if they are shorter, in order to make precise changes easier
 	///
@@ -304,19 +330,25 @@ import UIKit
 		renderer.setValue(value, animated: animated)
 	}
 	
+	/// Sets the value of the slider and calls actions for `valueChanged` and `primaryActionTriggered`, indicating that this change is the result of a completed user action.
+	///
+	/// - Note: If changing the value as a result of an *incomplete* user action such as a pan gesture when `isContinuous` is `false`, call `setValue(_:animated:)` directly instead
+	internal func userSetValue(_ newValue: Float, animated: Bool) {
+		setValue(newValue, animated: animated)
+		sendActions(for: [.valueChanged, .primaryActionTriggered])
+	}
+	
 	
 	// MARK: - Accessibility
 	
 	override open func accessibilityDecrement() {
-		value -= (maximum - minimum) / 10
-		renderer.setValue(value, animated: true)
-		sendActions(for: [.valueChanged, .primaryActionTriggered])
+		let newValue = value - steppingMode.stepSize(in: minimum...maximum)
+		userSetValue(newValue, animated: true)
 	}
 	
 	override open func accessibilityIncrement() {
-		value += (maximum - minimum) / 10
-		renderer.setValue(value, animated: true)
-		sendActions(for: [.valueChanged, .primaryActionTriggered])
+		let newValue = value + steppingMode.stepSize(in: minimum...maximum)
+		userSetValue(newValue, animated: true)
 	}
 	
 	/// Returns a string containing the value of the slider as a percentage
@@ -419,8 +451,7 @@ import UIKit
 				tapLocation = valueAxisFrom(sender.location(in: self), accountForDirection: false)
 			}
 			let tappedValue = valueForPosition(tapLocation)
-			setValue(tappedValue, animated: true)
-			sendActions(for: [.valueChanged, .primaryActionTriggered])
+			userSetValue(tappedValue, animated: true)
 		}
 	}
 	
