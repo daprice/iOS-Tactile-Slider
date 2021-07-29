@@ -7,26 +7,26 @@
 
 import UIKit
 
-/// Describes how a stepper-like object should step through a range of floating point values
-public enum SteppingMode<Number> where Number:BinaryFloatingPoint {
-	/// Specifies a percentage to increment/decrement by relative to the size of the range of possible values
-	case percentage(Number)
+@IBDesignable open class TactileSlider: UIControl {
 	
-	/// Specifies an absolute value to increment/decrement by
-	case stepValue(Number)
-	
-	public func stepSize(in range: ClosedRange<Number>) -> Number {
-		let rangeSize = range.upperBound - range.lowerBound
-		switch self {
-		case .percentage(let percentage):
-			return rangeSize * (percentage/100)
-		case .stepValue(let value):
-			return value
+	/// Describes how a stepper-like object should step through a range of floating point values
+	public enum SteppingMode<Number> where Number:BinaryFloatingPoint {
+		/// Specifies a percentage to increment/decrement by relative to the size of the range of possible values
+		case percentage(Number)
+		
+		/// Specifies an absolute value to increment/decrement by
+		case stepValue(Number)
+		
+		public func stepSize(in range: ClosedRange<Number>) -> Number {
+			let rangeSize = range.upperBound - range.lowerBound
+			switch self {
+			case .percentage(let percentage):
+				return rangeSize * (percentage/100)
+			case .stepValue(let value):
+				return value
+			}
 		}
 	}
-}
-
-@IBDesignable open class TactileSlider: UIControl {
 	
 	private enum Direction {
 		case rightToLeft
