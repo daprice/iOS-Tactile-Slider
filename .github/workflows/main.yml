@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Xcode build
-        run: set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TactileSlider.xcworkspace -scheme TactileSlider-Example -sdk iphonesimulator14.5 -destination "platform=iOS Simulator,OS=14.5,name=iPhone 11" ONLY_ACTIVE_ARCH=NO | xcpretty
+        run: set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TactileSlider.xcworkspace -scheme TactileSlider-Example -sdk iphonesimulator14.4 -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11" ONLY_ACTIVE_ARCH=NO | xcpretty
 
       # Runs a set of commands using the runners shell
       - name: pod lib lint
