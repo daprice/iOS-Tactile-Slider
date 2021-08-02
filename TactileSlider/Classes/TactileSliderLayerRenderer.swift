@@ -19,6 +19,13 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
+	var borderColor: UIColor? {
+		didSet {
+			trackLayer.strokeColor = borderColor?.cgColor
+			thumbLayer.borderColor = borderColor?.cgColor
+		}
+	}
+	
 	var thumbTint: UIColor = .white {
 		didSet {
 			thumbLayer.fillColor = thumbTint.cgColor
@@ -45,17 +52,23 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
-	let trackLayer = CALayer()
+	let trackLayer = CAShapeLayer()
 	let thumbLayer = CAShapeLayer()
 	let maskLayer = CAShapeLayer()
 	
 	init() {
 		trackLayer.backgroundColor = trackBackground.cgColor
+		trackLayer.fillColor = UIColor.clear.cgColor
 		thumbLayer.fillColor = thumbTint.cgColor
 		maskLayer.fillColor = UIColor.white.cgColor
 		maskLayer.backgroundColor = UIColor.clear.cgColor
 		trackLayer.mask = maskLayer
 		trackLayer.masksToBounds = true
+		
+		trackLayer.strokeColor = borderColor?.cgColor
+		trackLayer.lineWidth = 3
+		thumbLayer.borderColor = borderColor?.cgColor
+		thumbLayer.borderWidth = 1.5
 	}
 	
 	private func updateThumbLayerPath() {
@@ -74,6 +87,8 @@ internal class TactileSliderLayerRenderer {
 		let maskRect = CGRect(x: 0, y: 0, width: maskLayer.bounds.width, height: maskLayer.bounds.height)
 		let maskPath = UIBezierPath(roundedRect: maskRect, cornerRadius: cornerRadius)
 		maskLayer.path = maskPath.cgPath
+		
+		trackLayer.path = maskPath.cgPath
 		
 		CATransaction.commit()
 	}

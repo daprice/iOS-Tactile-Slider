@@ -188,6 +188,18 @@ import UIKit
 		}
 	}
 	
+	@IBInspectable open var borderColor: UIColor = {
+		if #available(iOS 13, *) {
+			return .separator
+		} else {
+			return .lightGray
+		}
+	}() {
+		didSet {
+			renderer.borderColor = borderColor
+		}
+	}
+	
 	/// The radius of the rounded corners of the slider
 	///
 	/// Note: If this is set to a negative value (or left as default in interface builder), the corner radius will be automatically determined from the size of the bounds
@@ -460,6 +472,7 @@ import UIKit
 	
 	open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		renderer.trackBackground = trackBackground
+		renderer.borderColor = borderColor
 		tintColorDidChange()
 	}
 	
