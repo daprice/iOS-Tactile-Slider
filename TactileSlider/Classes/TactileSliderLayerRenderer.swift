@@ -51,21 +51,28 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
-	let trackLayer = CAShapeLayer()
+	let trackLayer = CALayer()
 	let thumbLayer = CAShapeLayer()
 	let maskLayer = CAShapeLayer()
+	let outlineLayer = CAShapeLayer()
 	
 	init() {
 		trackLayer.backgroundColor = trackBackground.cgColor
-		trackLayer.fillColor = UIColor.clear.cgColor
 		thumbLayer.fillColor = thumbTint.cgColor
 		maskLayer.fillColor = UIColor.white.cgColor
 		maskLayer.backgroundColor = UIColor.clear.cgColor
 		trackLayer.mask = maskLayer
 		trackLayer.masksToBounds = true
+		outlineLayer.backgroundColor = nil
+		outlineLayer.fillColor = nil
 		
-		updateOutlineColors()
 		updateOutlineLayer()
+		updateOutlineColors()
+	}
+	
+	internal func setupLayers() {
+		trackLayer.addSublayer(thumbLayer)
+		trackLayer.addSublayer(outlineLayer)
 	}
 	
 	private func updateThumbLayerPath() {
@@ -82,10 +89,9 @@ internal class TactileSliderLayerRenderer {
 		CATransaction.setDisableActions(true)
 		
 		let maskRect = CGRect(x: 0, y: 0, width: maskLayer.bounds.width, height: maskLayer.bounds.height)
-		let maskPath = UIBezierPath(roundedRect: maskRect, cornerRadius: cornerRadius)
-		maskLayer.path = maskPath.cgPath
-		
-		trackLayer.path = maskPath.cgPath
+		let maskPath = UIBezierPath(roundedRect: maskRect, cornerRadius: cornerRadius).cgPath
+		maskLayer.path = maskPath
+		outlineLayer.path = maskPath
 		
 		CATransaction.commit()
 	}
@@ -98,13 +104,11 @@ internal class TactileSliderLayerRenderer {
 			color = nil
 		}
 		
-		trackLayer.strokeColor = color
-		thumbLayer.borderColor = color
+		outlineLayer.strokeColor = color
 	}
 	
 	private func updateOutlineLayer() {
-		trackLayer.lineWidth = outlineSize
-		thumbLayer.borderWidth = outlineSize / 2
+		outlineLayer.lineWidth = outlineSize * 2
 	}
 	
 	private func updateGrayedOut() {
@@ -133,6 +137,8 @@ internal class TactileSliderLayerRenderer {
 		
 		maskLayer.bounds = trackLayer.bounds
 		maskLayer.position = trackLayer.position
+		outlineLayer.bounds = trackLayer.bounds
+		outlineLayer.position = trackLayer.position
 		updateMaskLayerPath()
 		
 		thumbLayer.bounds = trackLayer.bounds
