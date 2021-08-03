@@ -145,11 +145,11 @@ internal class TactileSliderLayerRenderer {
 		thumbLayer.position = trackLayer.position
 		updateThumbLayerPath()
 		
-		CATransaction.commit()
-		
 		if let value = tactileSlider?.value {
 			setValue(value)
 		}
+		
+		CATransaction.commit()
 	}
 	
 	internal func setValue(_ value: Float, animated: Bool = false) {
