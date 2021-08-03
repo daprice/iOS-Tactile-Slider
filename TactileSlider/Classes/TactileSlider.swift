@@ -34,6 +34,11 @@ import UIKit
 		case topToBottom
 		case bottomToTop
 	}
+	
+	/// Defines a closure that returns a color (or lack of a color) for the outline of a given TactileSlider
+	///
+	/// - Property tactileSlider: the TactileSlider instance requesting an outline color
+	public typealias OutlineColorProvider = (_ tactileSlider: TactileSlider) -> UIColor?
 
 	// MARK: - Public properties
 	
@@ -188,15 +193,16 @@ import UIKit
 		}
 	}
 	
-	@IBInspectable open var borderColor: UIColor = {
+	/// To change the outline color of the TactileSlider, create a closure that returns a UIColor for the given TactileSlider, then assign that closure to `outlineColorProvider`.
+	open var outlineColorProvider: OutlineColorProvider = { slider in
 		if #available(iOS 13, *) {
 			return .separator
 		} else {
 			return .lightGray
 		}
-	}() {
+	} {
 		didSet {
-			renderer.borderColor = borderColor
+			renderer.updateOutlineColors()
 		}
 	}
 	
@@ -472,12 +478,13 @@ import UIKit
 	
 	open override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 		renderer.trackBackground = trackBackground
-		renderer.borderColor = borderColor
+		renderer.updateOutlineColors()
 		tintColorDidChange()
 	}
 	
 	open override func tintColorDidChange() {
 		renderer.thumbTint = tintColor
+		renderer.updateOutlineColors()
 	}
 	
 	override open func layoutSubviews() {

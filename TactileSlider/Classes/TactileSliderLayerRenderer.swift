@@ -19,10 +19,9 @@ internal class TactileSliderLayerRenderer {
 		}
 	}
 	
-	var borderColor: UIColor? {
+	var outlineSize: CGFloat = 3 {
 		didSet {
-			trackLayer.strokeColor = borderColor?.cgColor
-			thumbLayer.borderColor = borderColor?.cgColor
+			updateOutlineLayer()
 		}
 	}
 	
@@ -65,10 +64,8 @@ internal class TactileSliderLayerRenderer {
 		trackLayer.mask = maskLayer
 		trackLayer.masksToBounds = true
 		
-		trackLayer.strokeColor = borderColor?.cgColor
-		trackLayer.lineWidth = 3
-		thumbLayer.borderColor = borderColor?.cgColor
-		thumbLayer.borderWidth = 1.5
+		updateOutlineColors()
+		updateOutlineLayer()
 	}
 	
 	private func updateThumbLayerPath() {
@@ -91,6 +88,23 @@ internal class TactileSliderLayerRenderer {
 		trackLayer.path = maskPath.cgPath
 		
 		CATransaction.commit()
+	}
+	
+	internal func updateOutlineColors() {
+		let color: CGColor?
+		if let slider = tactileSlider {
+			color = slider.outlineColorProvider(slider)?.cgColor
+		} else {
+			color = nil
+		}
+		
+		trackLayer.strokeColor = color
+		thumbLayer.borderColor = color
+	}
+	
+	private func updateOutlineLayer() {
+		trackLayer.lineWidth = outlineSize
+		thumbLayer.borderWidth = outlineSize / 2
 	}
 	
 	private func updateGrayedOut() {
