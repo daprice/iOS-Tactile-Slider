@@ -37,8 +37,10 @@ import UIKit
 	
 	/// Defines a closure that returns a color (or lack of a color) for the outline of a given TactileSlider
 	///
-	/// - Property tactileSlider: the TactileSlider instance requesting an outline color
-	public typealias OutlineColorProvider = (_ tactileSlider: TactileSlider) -> UIColor?
+	/// - Parameter tactileSlider: the TactileSlider instance requesting a color
+	/// - Parameter proposedColor: the color that the TactileSlider suggests, or nil if no outline is suggested
+	/// - Returns: the UIColor to use for the outline color, or `nil` to disable the outline
+	public typealias ColorProvider = (_ tactileSlider: TactileSlider, _ proposedColor: UIColor?) -> UIColor?
 
 	// MARK: - Public properties
 	
@@ -193,27 +195,21 @@ import UIKit
 		}
 	}
 	
-	/// To dynamically change the outline color of the TactileSlider, create a closure that returns a UIColor for the given TactileSlider, then assign that closure to `outlineColorProvider`.
-	open var outlineColorProvider: OutlineColorProvider = { slider in
-		guard slider.fixedOutlineColor == nil else {
-			return slider.fixedOutlineColor
-		}
-		
-		if #available(iOS 13, *) {
-			return .separator
-		} else {
-			return .lightGray
-		}
-	} {
+	/// To dynamically change the outline color of the TactileSlider (for example, to select an outline color dynamically based on the contrast between the slider tint color and background), create a closure that returns a UIColor (or `nil`) for the given TactileSlider, then assign that closure to `outlineColorProvider`.
+	open var outlineColorProvider: ColorProvider? = nil {
 		didSet {
 			renderer.updateOutlineColors()
 		}
 	}
 	
-	/// Outline color of the slider, overrides the dynamic color provided by `outlineColorProvider` by default.
+	/// Outline color of the slider, overrides the default automatic behavior. If this is set to `nil`, an outline color will be automatically determined based on color contrast.
+	///
+	/// - Note: Because `nil` here means "automatically choose a color", if you want to disable the outline, set `outlineColor` to `UIColor.clear` or set `outlineSize` to `0`.
+	///
+	/// - Note: If a custom `outlineColorProvider` is set, the `outlineColor` set here will be passed to it as the proposed color rather than a system suggested color.
 	///
 	/// - See also: `TactileSlider.outlineColorProvider`
-	@IBInspectable open var fixedOutlineColor: UIColor? = nil {
+	@IBInspectable open var outlineColor: UIColor? = nil {
 		didSet {
 			renderer.updateOutlineColors()
 		}
@@ -221,10 +217,10 @@ import UIKit
 	
 	/// The thickness of the outline around the slider and thumb edge
 	///
-	/// - Note: Even if this is set to a nonzero value, the outline will only be visible in cases where `fixedOutlineColor` is set and/or `outlineColorProvider` returns a non-nil, non-transparent color
+	/// - Note: Even if this is set to a nonzero value, the outline will only be visible in cases where contrast is deemed low, `outlineColor` is set, and/or `outlineColorProvider` returns a non-nil, non-transparent color
 	///
+	/// - See also: `TactileSlider.outlineColor`
 	/// - See also: `TactileSlider.outlineColorProvider`
-	/// - See also: `TactileSlider.fixedOutlineColor`
 	@IBInspectable open var outlineSize: CGFloat = 1 {
 		didSet {
 			renderer.outlineSize = outlineSize
@@ -314,6 +310,30 @@ import UIKit
 		}
 		set(newValue) {
 			_feedbackStyle = newValue.rawValue
+		}
+	}
+	
+	/// The suggested outline color for the slider
+	internal var suggestedOutlineColor: UIColor? {
+		// If a manual outline color is set, suggest only that
+		guard outlineColor == nil else {
+			return outlineColor
+		}
+		
+		// TODO: Replace the following with something that chooses a dynamic color based on contrast (and also user's enhanced contrast setting if applicable)
+		if #available(iOS 13, *) {
+			return .separator
+		} else {
+			return nil
+		}
+	}
+	
+	/// The final decided outline color, taking into account `outlineColor` and `outlineColorProvider`
+	internal var finalOutlineColor: UIColor? {
+		if let colorProvider = outlineColorProvider {
+			return colorProvider(self, suggestedOutlineColor)
+		} else {
+			return suggestedOutlineColor
 		}
 	}
 	

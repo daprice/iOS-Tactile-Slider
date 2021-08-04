@@ -132,7 +132,7 @@ internal class TactileSliderLayerRenderer {
 	internal func updateOutlineColors() {
 		let color: CGColor?
 		if let slider = tactileSlider {
-			color = slider.outlineColorProvider(slider)?.cgColor
+			color = slider.finalOutlineColor?.cgColor
 		} else {
 			color = nil
 		}
