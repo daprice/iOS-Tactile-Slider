@@ -193,8 +193,12 @@ import UIKit
 		}
 	}
 	
-	/// To change the outline color of the TactileSlider, create a closure that returns a UIColor for the given TactileSlider, then assign that closure to `outlineColorProvider`.
+	/// To dynamically change the outline color of the TactileSlider, create a closure that returns a UIColor for the given TactileSlider, then assign that closure to `outlineColorProvider`.
 	open var outlineColorProvider: OutlineColorProvider = { slider in
+		guard slider.fixedOutlineColor == nil else {
+			return slider.fixedOutlineColor
+		}
+		
 		if #available(iOS 13, *) {
 			return .separator
 		} else {
@@ -203,6 +207,27 @@ import UIKit
 	} {
 		didSet {
 			renderer.updateOutlineColors()
+		}
+	}
+	
+	/// Outline color of the slider, overrides the dynamic color provided by `outlineColorProvider` by default.
+	///
+	/// - See also: `TactileSlider.outlineColorProvider`
+	@IBInspectable open var fixedOutlineColor: UIColor? = nil {
+		didSet {
+			renderer.updateOutlineColors()
+		}
+	}
+	
+	/// The thickness of the outline around the slider and thumb edge
+	///
+	/// - Note: Even if this is set to a nonzero value, the outline will only be visible in cases where `fixedOutlineColor` is set and/or `outlineColorProvider` returns a non-nil, non-transparent color
+	///
+	/// - See also: `TactileSlider.outlineColorProvider`
+	/// - See also: `TactileSlider.fixedOutlineColor`
+	@IBInspectable open var outlineSize: CGFloat = 1 {
+		didSet {
+			renderer.outlineSize = outlineSize
 		}
 	}
 	
@@ -327,6 +352,7 @@ import UIKit
 		
 		renderer.tactileSlider = self
 		renderer.cornerRadius = automaticCornerRadius
+		renderer.outlineSize = outlineSize
 		traitCollectionDidChange(nil)
 		
 		layer.backgroundColor = UIColor.clear.cgColor
