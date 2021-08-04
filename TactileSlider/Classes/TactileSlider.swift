@@ -40,6 +40,8 @@ import UIKit
 	/// - Parameter tactileSlider: the TactileSlider instance requesting a color
 	/// - Parameter proposedColor: the color that the TactileSlider suggests, or nil if no outline is suggested
 	/// - Returns: the UIColor to use for the outline color, or `nil` to disable the outline
+	///
+	/// - Note: `proposedColor` will always be `nil` on iOS versions prior to 13.
 	public typealias ColorProvider = (_ tactileSlider: TactileSlider, _ proposedColor: UIColor?) -> UIColor?
 
 	// MARK: - Public properties
@@ -221,7 +223,7 @@ import UIKit
 	///
 	/// - See also: `TactileSlider.outlineColor`
 	/// - See also: `TactileSlider.outlineColorProvider`
-	@IBInspectable open var outlineSize: CGFloat = 1 {
+	@IBInspectable open var outlineSize: CGFloat = 1.5 {
 		didSet {
 			renderer.outlineSize = outlineSize
 		}
@@ -320,12 +322,23 @@ import UIKit
 			return outlineColor
 		}
 		
-		// TODO: Replace the following with something that chooses a dynamic color based on contrast (and also user's enhanced contrast setting if applicable)
+		// if possible, calculate whether a border is necessary for contrast with the current system background color
 		if #available(iOS 13, *) {
-			return .separator
-		} else {
-			return nil
+			let contrastRatio = UIColor.contrastRatio(between: self.tintColor, and: .systemBackground)
+			
+			if contrastRatio < 1.25 {
+				// if an outline is needed, return a color that is `.systemFill` by default or `.separator` if high contrast is enabled
+				return UIColor { traitCollection in
+					if traitCollection.accessibilityContrast == UIAccessibilityContrast.high {
+						return UIColor.separator
+					} else {
+						return UIColor.systemFill
+					}
+				}
+			}
 		}
+		
+		return nil
 	}
 	
 	/// The final decided outline color, taking into account `outlineColor` and `outlineColorProvider`
