@@ -14,7 +14,7 @@ A slider control designed to be easy to grab and use because it can be dragged o
 - Can be dragged or (optionally) tapped to set a value
 - Supports horizontal and vertical orientation in either direction
 - IBDesignable – colors, values, rounded corners, and behavior can be customized in Interface Builder or programatically
-- Supports light & dark appearance using semantic system colors by default (iOS 13+)
+- Supports light & dark appearance using semantic system colors with borders that can automatically appear in low contrast situations (iOS 13+)
 - Adjustable haptic feedback (iOS 10+)
 - VoiceOver support
 - Supports pointer (e.g. trackpad or mouse) based scrolling on iPadOS (iOS 13.4+)
@@ -61,9 +61,9 @@ slider.reverseValueAxis = true
 ### Adjusting behavior
 
 ```swift
-slider.isContinuous = false
+slider.isContinuous = false // send events only at end of gesture vs continuously
 slider.enableTapping = false // allow or disallow tapping anywhere on the slider track to instantly set a value
-slider.feedbackStyle = .medium // customize haptic feedback
+slider.feedbackStyle = .medium // customize haptic feedback when the slider reaches the end
 slider.isScrollingEnabled = false // allow or disallow scrolling to adjust the slider using a connected pointing device on iPadOS
 ```
 
@@ -72,7 +72,13 @@ slider.isScrollingEnabled = false // allow or disallow scrolling to adjust the s
 ```swift
 slider.trackBackground = UIColor.black.withAlpha(0.8) // use translucent black for the slider track
 slider.tintColor = UIColor.systemGreen // use dynamic green for the slider thumb
-slider.cornerRadius = 12
+
+slider.outlineColor = UIColor.gray // color of outline around slider and thumb (if unset, will be determined automatically based on contrast between tintColor and current system appearance)
+slider.outlineColorProvider = { slider, suggestedColor -> UIColor? in … } // provide your own closure to set the outline color dynamically
+slider.outlineSize = 2 // set thickness of outline
+
+slider.cornerRadius = 12 // size of corner radius; defaults to automatic based on the slider's bounds
+
 slider.isPointerInteractionEnabled = true // display a hover effect when under the pointer on iPadOS
 ```
 
