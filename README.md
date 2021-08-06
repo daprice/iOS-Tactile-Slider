@@ -65,6 +65,7 @@ slider.isContinuous = false // send events only at end of gesture vs continuousl
 slider.enableTapping = false // allow or disallow tapping anywhere on the slider track to instantly set a value
 slider.feedbackStyle = .medium // customize haptic feedback when the slider reaches the end
 slider.isScrollingEnabled = false // allow or disallow scrolling to adjust the slider using a connected pointing device on iPadOS
+slider.precisionRampUpDistance = 10 // enable finer adjustment when moving the slider by amounts smaller than this distance (in screen points)
 ```
 
 ### Changing colors and appearance
@@ -80,6 +81,19 @@ slider.outlineSize = 2 // set thickness of outline
 slider.cornerRadius = 12 // size of corner radius; defaults to automatic based on the slider's bounds
 
 slider.isPointerInteractionEnabled = true // display a hover effect when under the pointer on iPadOS
+```
+
+
+### Fine tuning accessibility
+
+By default, the accessibility increment and decrement gestures change the value by 10% of the slider's range, matching the behavior of UISlider. This can be adjusted:
+
+```swift
+slider.steppingMode = .percentage(5) // specify a percentage to increment/decrement the slider's value by
+```
+
+```swift
+slider.steppingMode = .stepValue(0.1) // specify a fixed value to increment/decrement the slider's value by
 ```
 
 ### Interface Builder
