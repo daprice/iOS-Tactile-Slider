@@ -7,6 +7,9 @@
 
 import UIKit
 
+@available(iOS 9, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
 internal class TactileSliderLayerRenderer {
 	
 	private static var valueChangeTimingFunction = CAMediaTimingFunction(name: .default)

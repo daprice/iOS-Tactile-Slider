@@ -45,6 +45,9 @@ import UIKit
 ///
 /// ### Fine tuning accessibility
 /// - ``steppingMode-swift.property``
+@available(iOS 9, *)
+@available(tvOS, unavailable)
+@available(macOS, unavailable)
 @IBDesignable open class TactileSlider: UIControl {
 	
 	/// Describes how a stepper-like object should step through a range of floating point values
