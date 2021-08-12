@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 @available(iOS 13.4, *)
+@available(tvOS, unavailable)
 extension TactileSlider: UIPointerInteractionDelegate {
 	
 	internal func setUpPointerInteraction() {
