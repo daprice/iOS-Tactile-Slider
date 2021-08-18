@@ -50,14 +50,22 @@ import UIKit
 @available(macOS, unavailable)
 @IBDesignable open class TactileSlider: UIControl {
 	
-	/// Describes how a stepper-like object should step through a range of floating point values
+	/// Describes how a stepper-like object should step through a range of floating point values.
 	public enum SteppingMode<Number> where Number:BinaryFloatingPoint {
-		/// Specifies a percentage to increment/decrement by relative to the size of the range of possible values
+		/// Specifies a percentage to increment/decrement by relative to the size of the range of possible values.
+		///
+		/// For example, a ``TactileSlider`` with the stepping mode `percentage(5)`, a ``TactileSlider/minimum`` of `0`, and a ``TactileSlider/maximum`` of `10`, would change its value by `0.5` (i.e. 5% of the difference between 10 and 0) with each increment/decrement.
 		case percentage(Number)
 		
-		/// Specifies an absolute value to increment/decrement by
+		/// Specifies an absolute value to increment/decrement by.
+		///
+		/// For example, a ``TactileSlider`` with the stepping mode `stepValue(2)` would change its value by `2.0` with each increment/decrement, regardless of ``TactileSlider/minimum`` and ``TactileSlider/maximum``.
 		case stepValue(Number)
 		
+		/// Calculates the size of an increment within the given range according to the ``SteppingMode`` instance.
+		///
+		/// - Parameter range: The range in which to calculate the increment size.
+		/// - Returns: Floating point value specifying the absolute value of an increment/decrement within the specified range.
 		public func stepSize(in range: ClosedRange<Number>) -> Number {
 			let rangeSize = range.upperBound - range.lowerBound
 			switch self {
