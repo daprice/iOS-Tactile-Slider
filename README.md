@@ -42,6 +42,8 @@ pod 'TactileSlider'
 
 ## Usage
 
+For the full documentation using Xcode 13 or later, add TactileSlider as a dependency or download a local copy, then choose Product > Build Documentation. In previous versions of Xcode, symbol documentation will appear in Quick Help.
+
 ```swift
 let slider = TactileSlider(frame: someRect)
 
