@@ -3,6 +3,7 @@
 ![CI Status](https://github.com/daprice/iOS-Tactile-Slider/actions/workflows/main.yml/badge.svg)
 ![Swift Package Manager compatible](https://img.shields.io/badge/Swift_Package_Manager-compatible-orange?style=flat)
 [![Version](https://img.shields.io/cocoapods/v/TactileSlider.svg?style=flat)](https://cocoapods.org/pods/TactileSlider)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/TactileSlider.svg?style=flat)](https://cocoapods.org/pods/TactileSlider)
 [![Platform](https://img.shields.io/cocoapods/p/TactileSlider.svg?style=flat)](https://cocoapods.org/pods/TactileSlider)
 
