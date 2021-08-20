@@ -1,5 +1,5 @@
 PODS:
-  - TactileSlider (2.0.1)
+  - TactileSlider (3.0.0)
 
 DEPENDENCIES:
   - TactileSlider (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TactileSlider: 5f7ec6813db958145c024fb0cf7886af8dc6a49d
+  TactileSlider: 29d7ece49b13f921f1c8e0952ffba6c0b9c9d19d
 
 PODFILE CHECKSUM: 2e2460c93ad3a974bdc28985d5e5541147bb0773
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.2
