@@ -106,7 +106,7 @@ slider.steppingMode = .stepValue(0.1) // specify a fixed value to increment/decr
 
 ## Author
 
-Dale Price ([@dale_price@mastodon.technology](https://mastodon.technology/@dale_price))
+Dale Price ([@dale_price@mastodon.online](https://mastodon.online/@dale_price))
 
 ## License
 
