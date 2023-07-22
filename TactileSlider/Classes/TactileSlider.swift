@@ -531,7 +531,7 @@ import UIKit
 		}
 	}
 	
-	@objc func didPan(sender: UIPanGestureRecognizer) {
+	@objc public func didPan(sender: UIPanGestureRecognizer) {
 		let translationLengthAlongValueAxis = valueAxisFrom(sender.translation(in: self))
 		
 		accumulatedMovement += translationLengthAlongValueAxis
@@ -588,7 +588,7 @@ import UIKit
 		}
 	}
 	
-	@objc func didTap(sender: UITapGestureRecognizer) {
+	@objc public func didTap(sender: UITapGestureRecognizer) {
 		if sender.state == .ended {
 			let tapLocation: CGFloat
 			if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
