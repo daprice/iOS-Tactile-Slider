@@ -53,13 +53,33 @@ internal class TactileSliderLayerRenderer {
 			}
 		}
 	}
+    
+    var image:UIImage? = nil{
+        didSet{
+            updateImage()
+        }
+    }
+    
+    var imagePosition:TactileSlider.ImagePosition = .bottom{
+        didSet{
+            updateImageFrame()
+        }
+    }
+    
+    var imageSize:CGSize = .init(width: 20, height: 20){
+        didSet{
+            updateImageFrame()
+        }
+    }
+
 	
 	let trackLayer = CALayer()
 	let thumbLayer = CAShapeLayer()
 	let maskLayer = CAShapeLayer()
 	let outlineLayer = CAShapeLayer()
 	let thumbOutlineLayer = CAShapeLayer()
-	
+    let imageLayer = CALayer()
+    
 	init() {
 		trackLayer.backgroundColor = trackBackground.cgColor
 		thumbLayer.fillColor = thumbTint.cgColor
@@ -74,12 +94,15 @@ internal class TactileSliderLayerRenderer {
 		
 		updateOutlineLayer(updateBounds: false)
 		updateOutlineColors()
+        updateImage()
+        updateImageFrame()
 	}
 	
 	internal func setupLayers() {
 		trackLayer.addSublayer(thumbLayer)
 		trackLayer.addSublayer(outlineLayer)
 		thumbLayer.addSublayer(thumbOutlineLayer)
+        trackLayer.addSublayer(imageLayer)
 	}
 	
 	private func updateThumbLayerPath() {
@@ -185,6 +208,9 @@ internal class TactileSliderLayerRenderer {
 		thumbOutlineLayer.position = trackLayer.position
 		updateThumbLayerPath()
 		
+        updateImage()
+        updateImageFrame()
+        
 		if let value = tactileSlider?.value {
 			setValue(value)
 		}
@@ -210,4 +236,40 @@ internal class TactileSliderLayerRenderer {
 		
 		CATransaction.commit()
 	}
+    
+    private func updateImage(){
+        guard let image else {
+            imageLayer.contents = nil
+            return
+        }
+        
+        imageLayer.contents = image.cgImage
+    }
+    
+    private func updateImageFrame(){
+        
+        
+        var origin:CGPoint = .zero
+        switch imagePosition {
+        case .left:
+            let leftPadding = min(trackLayer.frame.maxX * 0.1, 30)
+            origin = .init(x: trackLayer.frame.minX + leftPadding, y: trackLayer.frame.midY-imageSize.height/2)
+        case .right:
+            let rightPadding = min(trackLayer.frame.maxX * 0.1, 30)
+            origin = .init(x: trackLayer.frame.maxX - imageSize.width - rightPadding, y: trackLayer.frame.midY-imageSize.height/2)
+        case .top:
+            let topPadding =  min(trackLayer.frame.maxY * 0.1, 30)
+            origin = .init(x: trackLayer.frame.midX - imageSize.width/2, y: trackLayer.frame.minY+topPadding)
+        case .bottom:
+            let bottomPadding = min(trackLayer.frame.maxY * 0.1, 30)
+            origin = .init(x: trackLayer.frame.midX - imageSize.width/2, y: trackLayer.frame.maxY-imageSize.height - bottomPadding)
+        case .center:
+            origin = .init(x: trackLayer.frame.midX - imageSize.width/2, y: trackLayer.frame.midY-imageSize.height/2)
+        }
+        
+        
+        imageLayer.frame = .init(origin: origin, size: imageSize)
+        imageLayer.contentsGravity = .resizeAspect
+        imageLayer.isGeometryFlipped = true
+    }
 }
