@@ -76,7 +76,15 @@ import UIKit
 			}
 		}
 	}
-	
+    
+    public enum ImagePosition:String{
+        case right
+        case left
+        case top
+        case bottom
+        case center
+    }
+
 	private enum Direction {
 		case rightToLeft
 		case leftToRight
@@ -195,6 +203,16 @@ import UIKit
 			setTapEnabled()
 		}
 	}
+    
+    /// Indicates whether a drag within the slider's bounds will set its value.
+    ///
+    /// If true, drag anywhere in the slider will set it to that value.
+    @IBInspectable open var enableDragging: Bool = true {
+        didSet {
+            setDragEnabled()
+        }
+    }
+
 	
 	/// An array of `UITouch.TouchType`s used to distinguish the type of touches for the ``enableTapping`` feature.
 	///
@@ -309,6 +327,43 @@ import UIKit
 			}
 		}
 	}
+    
+    /// The image of the slider.
+    ///
+    /// If the image is set, the slider will show the image in the specified location.
+    /// for more information about image position, check``imagePosition``
+    /// (default value: ``nil``)
+    @IBInspectable open var image:UIImage? = nil{
+        didSet{
+            renderer.image = image
+        }
+    }
+    
+    /// The position of the slider's image.
+    ///
+    /// If set image position, the slider will show the image in the selected position. (default value: ``bottom``)
+    open var imagePosition:ImagePosition? = nil{
+        didSet{
+            renderer.imagePosition = imagePosition ?? .bottom
+        }
+    }
+
+    
+    /**
+     The position of the slider image for the storyboard.
+     
+     If set image position, slider will show image in selected position.for more information about image position, check``imagePosition``(default value: ``bottom``)
+     - Note: If creating a view from code, use ``imagePosition`` instead.
+    */
+    @IBInspectable open var position:String? = nil{
+        didSet{
+            guard let position = position?.lowercased() else {
+                imagePosition = nil
+                return
+            }
+            imagePosition = ImagePosition.init(rawValue: position)
+        }
+    }
 	
 	/// See [`UIView.frame`](https://developer.apple.com/documentation/uikit/uiview/1622621-frame)
 	override open var frame: CGRect {
@@ -521,6 +576,10 @@ import UIKit
 	private func setTapEnabled() {
 		tapGestureRecognizer.isEnabled = enableTapping
 	}
+    
+    private func setDragEnabled() {
+        dragGestureRecognizer.isEnabled = enableDragging
+    }
 	
 	@available(iOS 13.4, *)
 	private func setScrollingEnabled() {
@@ -531,7 +590,7 @@ import UIKit
 		}
 	}
 	
-	@objc func didPan(sender: UIPanGestureRecognizer) {
+	@objc public func didPan(sender: UIPanGestureRecognizer) {
 		let translationLengthAlongValueAxis = valueAxisFrom(sender.translation(in: self))
 		
 		accumulatedMovement += translationLengthAlongValueAxis
@@ -588,7 +647,7 @@ import UIKit
 		}
 	}
 	
-	@objc func didTap(sender: UITapGestureRecognizer) {
+	@objc public func didTap(sender: UITapGestureRecognizer) {
 		if sender.state == .ended {
 			let tapLocation: CGFloat
 			if (reverseValueAxis && !vertical) || (!reverseValueAxis && vertical) {
