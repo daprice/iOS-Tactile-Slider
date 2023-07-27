@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23G-Tb-ylv" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="28" width="295" height="50"/>
+                                <rect key="frame" x="40" y="8" width="295" height="50"/>
                                 <accessibility key="accessibilityConfiguration" label="Example value 1">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -41,17 +39,10 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image">
-                                        <imageReference key="value" image="sun.min.fill" catalog="system" symbolScale="large" renderingMode="original" variableValue="5.5511151231257827e-17"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="imageTintColor">
-                                        <color key="value" systemColor="systemRedColor"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="position" value="right"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-j3-34d" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="94" width="295" height="50"/>
+                                <rect key="frame" x="40" y="74" width="295" height="50"/>
                                 <accessibility key="accessibilityConfiguration" label="Example value 2">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -71,12 +62,10 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="sun.min.fill" catalog="system"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="position" value="left"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV5-ku-zjX" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="40" y="160" width="50" height="200"/>
+                                <rect key="frame" x="40" y="140" width="50" height="200"/>
                                 <accessibility key="accessibilityConfiguration" label="Example value 3">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -96,12 +85,10 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="sun.min.fill" catalog="system"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="position" value="top"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEf-fM-pCA" customClass="TactileSlider" customModule="TactileSlider">
-                                <rect key="frame" x="106" y="160" width="50" height="200"/>
+                                <rect key="frame" x="106" y="140" width="50" height="200"/>
                                 <accessibility key="accessibilityConfiguration" label="Example value 4">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -121,7 +108,6 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
                                         <real key="value" value="0.14999999999999999"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="sun.min.fill" catalog="system"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -146,10 +132,4 @@
             <point key="canvasLocation" x="56.799999999999997" y="27.436281859070466"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="sun.min.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
